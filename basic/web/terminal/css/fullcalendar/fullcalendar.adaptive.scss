@@ -1,0 +1,21 @@
+$mobile: 767px;
+$tablet: 1024px;
+
+@mixin respond-to($size) {
+  @if $size == xs {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @else if $size == sm {
+    @media only screen and (min-width: $mobile + 1) and (max-width: $tablet - 1) { @content; }
+  }
+  @else if $size == md {
+    @media only screen and (min-width: $tablet) { @content; }
+  }
+}
+
+
+.fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title{
+  @include respond-to(xs){
+    font-size: 8px;
+  }
+}

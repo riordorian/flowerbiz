@@ -18,16 +18,16 @@ class TerminalLoginAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/assets/admin/css/bootstrap.css?1',
-        '/assets/admin/css/loader.css',
+        '/admin/css/bootstrap.css?1',
+        '/admin/css/loader.css',
 
-        '/assets/admin/font-awesome/css/font-awesome.css',
-        '/assets/terminal-login/css/style.css',
+        '/admin/font-awesome/css/font-awesome.css',
+        '/terminal-login/css/style.css',
     ];
     public $js = [
-        'assets/admin/js/bootstrap.js',
-        'assets/admin/js/crm.js',
-        'assets/terminal-login/js/login.js',
+        '/admin/js/bootstrap.js',
+        '/admin/js/crm.js',
+        '/terminal-login/js/login.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

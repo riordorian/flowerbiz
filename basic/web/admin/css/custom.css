@@ -1,0 +1,27 @@
+.column_actions a {
+  color: #1ab394; }
+
+.list-view {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between; }
+
+.cash-period {
+  height: 100%; }
+.cash-period__inner {
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #1ab394;
+  border-radius: 10px; }
+.cash-period__inner_light {
+  border-color: #e7eaec;
+  border-radius: 0;
+  border-top: none; }
+
+.link {
+  color: #1ab394; }
+.link:hover, .link:active, .link:focus {
+  color: #1ab394;
+  outline: none; }
+
+/*# sourceMappingURL=custom.css.map */

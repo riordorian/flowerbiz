@@ -18,30 +18,30 @@ class AdminAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/assets/admin/css/bootstrap.css?1',
-        '/assets/admin/css/loader.css',
-        '/assets/admin/css/animate.css',
+        '/admin/css/bootstrap.css?1',
+        '/admin/css/loader.css',
+        '/admin/css/animate.css',
 
         /*CHOSEN*/
-        '/assets/admin/css/plugins/chosen/chosen.css',
-        '/assets/admin/css/plugins/chosen/bootstrap-chosen.css',
+        '/admin/css/plugins/chosen/chosen.css',
+        '/admin/css/plugins/chosen/bootstrap-chosen.css',
 
         /*DATAPICKER*/
-        '/assets/admin/css/plugins/datepicker/datepicker3.css',
-        '/assets/admin/css/plugins/datepicker/datetimepicker.css',
+        '/admin/css/plugins/datepicker/datepicker3.css',
+        '/admin/css/plugins/datepicker/datetimepicker.css',
 
         /*ICHEK*/
-        '/assets/admin/css/plugins/iCheck/custom.css',
+        '/admin/css/plugins/iCheck/custom.css',
 
         /*SWITCHER*/
-        '/assets/admin/css/plugins/switchery/switchery.css',
+        '/admin/css/plugins/switchery/switchery.css',
 
         /*MAGNIFIC-POPUP*/
-        '/assets/admin/css/plugins/mgnfc-popup/magnific-popup.css',
+        '/admin/css/plugins/mgnfc-popup/magnific-popup.css',
 
-        '/assets/admin/font-awesome/css/font-awesome.css',
-        '/assets/admin/css/style.css',
-        '/assets/admin/css/custom.css',
+        '/admin/font-awesome/css/font-awesome.css',
+        '/admin/css/style.css',
+        '/admin/css/custom.css',
     ];
     public $js = [
         'assets/admin/js/bootstrap.js',
@@ -72,7 +72,7 @@ class AdminAsset extends AssetBundle
 
         /*MAGNIFIC-POPUP*/
         'assets/admin/js/plugins/mgnfc-popup/jquery.magnific-popup.js',
-        '/assets/admin/css/plugins/mgnfc-popup/magnific-popup-custom.css',
+        '/admin/css/plugins/mgnfc-popup/magnific-popup-custom.css',
 
         'assets/admin/js/inspinia.js',
         'assets/admin/js/crm.js',

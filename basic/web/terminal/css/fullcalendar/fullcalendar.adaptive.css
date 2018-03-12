@@ -1,0 +1,5 @@
+@media only screen and (max-width: 767px) {
+  .fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title {
+    font-size: 8px; } }
+
+/*# sourceMappingURL=fullcalendar.adaptive.css.map */

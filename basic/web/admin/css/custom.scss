@@ -1,0 +1,47 @@
+$mainActiveColor: #293846;
+$mainLinkColor: #1ab394;
+$lightColor: #e7eaec;
+
+.column{
+  &_actions{
+    a{
+      color: $mainLinkColor;
+    }
+  }
+}
+.list-view{
+  &{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+  }
+}
+.cash-period{
+  &{
+    height: 100%;
+  }
+  &__inner{
+    &{
+      height: 100%;
+      padding: 20px;
+      border: 1px solid $mainLinkColor;
+      border-radius: 10px;
+    }
+    &_light{
+      border-color: $lightColor;
+      border-radius: 0;
+      border-top: none;
+    }
+  }
+}
+.link{
+  &{
+    color: $mainLinkColor;
+  }
+  &:hover,
+  &:active,
+  &:focus{
+    color: $mainLinkColor;
+    outline: none;
+  }
+}

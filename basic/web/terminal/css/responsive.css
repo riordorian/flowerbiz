@@ -1,0 +1,16 @@
+@media only screen and (max-width: 767px) {
+  .fc-time-grid-event .fc-time, .fc-time-grid-event .fc-title {
+    font-size: 8px; } }
+
+@media only screen and (max-width: 767px) {
+  .terminal__order-info {
+    position: relative;
+    width: auto;
+    margin-left: -15px;
+    margin-right: -15px; } }
+.terminal__cart-info {
+  position: fixed;
+  right: 10px;
+  bottom: 10px; }
+
+/*# sourceMappingURL=responsive.css.map */

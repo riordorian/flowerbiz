@@ -18,60 +18,60 @@ class TerminalAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/assets/admin/css/bootstrap.css?2',
-        '/assets/admin/css/loader.css',
+        '/admin/css/bootstrap.css?2',
+        '/admin/css/loader.css',
 
         /*CHOSEN*/
-        '/assets/admin/css/plugins/chosen/chosen.css',
-        '/assets/admin/css/plugins/chosen/bootstrap-chosen.css',
+        '/admin/css/plugins/chosen/chosen.css',
+        '/admin/css/plugins/chosen/bootstrap-chosen.css',
 
         /*SWITCHER*/
-        '/assets/admin/css/plugins/switchery/switchery.css',
+        '/admin/css/plugins/switchery/switchery.css',
 
         /*CLOCKPICKER*/
-        'assets/admin/css/plugins/clockpicker/clockpicker.css',
+        '/admin/css/plugins/clockpicker/clockpicker.css',
 
-        '/assets/admin/font-awesome/css/font-awesome.css',
+        '/admin/font-awesome/css/font-awesome.css',
 
         /*MAGNIFIC-POPUP*/
-        '/assets/admin/css/plugins/mgnfc-popup/magnific-popup.css',
-        '/assets/admin/css/plugins/mgnfc-popup/magnific-popup-custom.css',
+        '/admin/css/plugins/mgnfc-popup/magnific-popup.css',
+        '/admin/css/plugins/mgnfc-popup/magnific-popup-custom.css',
 
         /*FULL CALENDAR*/
-        '/assets/terminal/css/fullcalendar/fullcalendar.css',
-        '/assets/terminal/css/fullcalendar/fullcalendar.adaptive.css',
+        '/terminal/css/fullcalendar/fullcalendar.css',
+        '/terminal/css/fullcalendar/fullcalendar.adaptive.css',
 
-        '/assets/admin/css/style.css',
-        '/assets/terminal/css/style.css?',
-        '/assets/terminal/css/responsive.css?',
+        '/admin/css/style.css',
+        '/terminal/css/style.css?',
+        '/terminal/css/responsive.css?',
 
     ];
     public $js = [
         /*CHOSEN*/
-        'assets/admin/js/plugins/chosen/chosen.jquery.js',
+        '/admin/js/plugins/chosen/chosen.jquery.js',
 
         /*SWITCHER*/
-        'assets/admin/js/plugins/switchery/switchery.js',
+        '/admin/js/plugins/switchery/switchery.js',
 
         /*AUTOCOMPLETE*/
-        'assets/terminal/js/typeahead/typeahead.min.js',
+        '/terminal/js/typeahead/typeahead.min.js',
         
         /*CLOCKPICKER*/
-        'assets/admin/js/plugins/clockpicker/clockpicker.js',
+        '/admin/js/plugins/clockpicker/clockpicker.js',
 
         /*MAGNIFIC-POPUP*/
-        'assets/admin/js/plugins/mgnfc-popup/jquery.magnific-popup.js',
+        '/admin/js/plugins/mgnfc-popup/jquery.magnific-popup.js',
 
         /*MASKED INPUT*/
-        'assets/admin/js/plugins/jasny/jasny-bootstrap.min.js',
+        '/admin/js/plugins/jasny/jasny-bootstrap.min.js',
 
-        'assets/admin/js/bootstrap.js',
-        'assets/terminal/js/fullcalendar/moment.min.js',
-        'assets/terminal/js/fullcalendar/fullcalendar.min.js',
-        'assets/terminal/js/fullcalendar/ru.js',
-        'assets/terminal/js/fullcalendar/gcal.js',
-        'assets/admin/js/crm.js',
-        'assets/terminal/js/terminal.js',
+        '/admin/js/bootstrap.js',
+        '/terminal/js/fullcalendar/moment.min.js',
+        '/terminal/js/fullcalendar/fullcalendar.min.js',
+        '/terminal/js/fullcalendar/ru.js',
+        '/terminal/js/fullcalendar/gcal.js',
+        '/admin/js/crm.js',
+        '/terminal/js/terminal.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKI,yCAA4C;EAWhD,2DAA2D;IAEvD,SAAS,EAAE,GAAG",
+"sources": ["fullcalendar.adaptive.scss"],
+"names": [],
+"file": "fullcalendar.adaptive.css"
+}
