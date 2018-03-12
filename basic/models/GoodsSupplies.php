@@ -67,7 +67,7 @@ class GoodsSupplies extends Prototype
      */
     public function getGood()
     {
-        return $this->hasOne(CATALOGPRODUCTS::className(), ['ID' => 'GOOD_ID'])->inverseOf('goodsSupplies');
+        return $this->hasOne(CatalogProducts::className(), ['ID' => 'GOOD_ID'])->inverseOf('goodsSupplies');
     }
 
 
