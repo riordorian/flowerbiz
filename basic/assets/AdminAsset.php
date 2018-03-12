@@ -44,39 +44,39 @@ class AdminAsset extends AssetBundle
         '/admin/css/custom.css',
     ];
     public $js = [
-        'assets/admin/js/bootstrap.js',
+        '/admin/js/bootstrap.js',
 
-        'assets/admin/js/plugins/metisMenu/jquery.metisMenu.js',
+        '/admin/js/plugins/metisMenu/jquery.metisMenu.js',
 
         /*CHOSEN*/
-        'assets/admin/js/plugins/chosen/chosen.jquery.js',
+        '/admin/js/plugins/chosen/chosen.jquery.js',
 
         /*ICHECK*/
-        'assets/admin/js/plugins/iCheck/icheck.min.js'
+        '/admin/js/plugins/iCheck/icheck.min.js'
         ,
-        'assets/admin/js/plugins/slimscroll/jquery.slimscroll.min.js',
-//        'assets/admin/js/plugins/pace/pace.min.js',
+        '/admin/js/plugins/slimscroll/jquery.slimscroll.min.js',
+//        '/admin/js/plugins/pace/pace.min.js',
 
         /*DATEPICKER*/
-        'assets/admin/js/plugins/datepicker/bootstrap-datepicker.js',
+        '/admin/js/plugins/datepicker/bootstrap-datepicker.js',
 
         /*DATETIMEPICKER*/
-        'assets/admin/js/moment.js',
-        'assets/admin/js/plugins/datepicker/datetimepicker.js',
+        '/admin/js/moment.js',
+        '/admin/js/plugins/datepicker/datetimepicker.js',
 
         /*MASKED INPUT*/
-        'assets/admin/js/plugins/jasny/jasny-bootstrap.min.js',
+        '/admin/js/plugins/jasny/jasny-bootstrap.min.js',
 
         /*SWITCHER*/
-        'assets/admin/js/plugins/switchery/switchery.js',
+        '/admin/js/plugins/switchery/switchery.js',
 
         /*MAGNIFIC-POPUP*/
-        'assets/admin/js/plugins/mgnfc-popup/jquery.magnific-popup.js',
+        '/admin/js/plugins/mgnfc-popup/jquery.magnific-popup.js',
         '/admin/css/plugins/mgnfc-popup/magnific-popup-custom.css',
 
-        'assets/admin/js/inspinia.js',
-        'assets/admin/js/crm.js',
-        'assets/admin/js/admin.js',
+        '/admin/js/inspinia.js',
+        '/admin/js/crm.js',
+        '/admin/js/admin.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
