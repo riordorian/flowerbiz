@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
+    'adminEmail' => '79106653117@ya.ru',
+    'supportEmail' => '79106653117@ya.ru',
 	'filesUploadUrl' => '/uploads/',
 ];
