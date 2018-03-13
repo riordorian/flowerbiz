@@ -74,7 +74,8 @@ class LoyaltyProgramsController extends AdminController
 
         $arModels = array($model);
         $arResult = $model->find()->all();
-        
+
+        $arModelSteps = [];
         if( !empty($arResult) ){
             $arModels = $arResult;
 

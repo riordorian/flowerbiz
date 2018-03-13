@@ -38,7 +38,7 @@ $this->context->fixHeading = 'true';
             # show loyalty steps forms
             if( !empty($arModelSteps[$model->ID]) && is_array($arModelSteps[$model->ID]) ){
                 foreach($arModelSteps[$model->ID] as $modelStep){
-                    $modelStep->LOYALTY_PROGRAM_ID = $model->ID;
+                    $modelSteps->LOYALTY_PROGRAM_ID = $model->ID;
                     echo $this->render('_form_steps.php', [
                         'modelStep' => $modelStep,
                         'arGroups' => $arGroups[$model->ID],
@@ -65,9 +65,9 @@ $this->context->fixHeading = 'true';
             }
 
             ?><div class="hidden js-form_cloned"><?
-                $modelStep->ID = false;
+                $modelSteps->ID = false;
                 echo $this->render('_form_steps.php', [
-                    'modelStep' => $modelStep,
+                    'modelStep' => $modelSteps,
                     'modelSteps' => $modelSteps,
                     'arGroups' => $arGroups[$model->ID]
                 ]);
