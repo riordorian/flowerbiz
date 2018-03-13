@@ -9,7 +9,7 @@ use yii\widgets\Pjax;
 $this->title = 'Расчет зарплаты';
 $this->params['breadcrumbs'][] = $this->title;?>
 
-<?php  echo $this->render('_salaries_search', ['arOperators' => $arOperators]); ?>
+<?php  echo $this->render('_salaries_search', ['arOperators' => $arOperators, 'selectedOperator' => $selectedOperator]); ?>
 
 <?
 if( !empty($dataProvider->allModels) ){

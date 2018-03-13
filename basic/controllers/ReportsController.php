@@ -60,7 +60,8 @@ class ReportsController extends AdminController
         return $this->render($this->viewPath . 'salaries', [
             'arOperators' => $arOperators,
             'dataProvider' => $dataProvider,
-            'total' => !empty($arSalaryOrders['TOTAL']) ? $arSalaryOrders['TOTAL'] : 0
+            'total' => !empty($arSalaryOrders['TOTAL']) ? $arSalaryOrders['TOTAL'] : 0,
+            'selectedOperator' => !empty($arReq['Salaries']['OPERATOR_ID']) ? $arReq['Salaries']['OPERATOR_ID'] : reset($arOperators)['id']
         ]);
     }
 

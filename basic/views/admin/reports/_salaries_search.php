@@ -25,7 +25,7 @@ $arReq = Yii::$app->getRequest()->queryParams;
                 'Salaries[OPERATOR_ID]',
                 '',
                 ArrayHelper::map($arOperators, 'id', 'username'),
-                ['class' => 'js-widget chosen', 'options' => [$arReq['Salaries']['OPERATOR_ID'] => ['selected' => true]]]
+                ['class' => 'js-widget chosen', 'options' => [$selectedOperator => ['selected' => true]]]
             )?>
         </div>
         <div class="form-group col-md-4">
