@@ -62,6 +62,12 @@ class OrdersController extends PrototypeController
         }
 
         $arCategories = CatalogSections::find()->orderBy(['SORT' => SORT_DESC])->asArray()->all();
+        foreach($arCategories as &$arCategory){
+            if( empty($arCategory['IMAGE']) || !file_exists(Yii::getAlias('@webroot') . $arCategory['IMAGE']) ){
+                $arCategory['IMAGE'] = '/uploads/dummy.jpg';
+            }
+        }
+        unset($arCategory);
         array_unshift($arCategories, ['ID' => 0, 'NAME' => 'Букеты', 'IMAGE' => '/uploads/bouquets.jpg']);
         $arOperator = Operators::find()->where(['id' => Yii::$app->user->id])->asArray()->one();
 
@@ -127,7 +133,7 @@ class OrdersController extends PrototypeController
         }
         
         foreach($arGoods as &$arGood){
-            if( empty($arGood['IMAGE']) ){
+            if( empty($arGood['IMAGE']) || !file_exists(Yii::getAlias('@webroot') . $arGood['IMAGE']) ){
                 $arGood['IMAGE'] = '/uploads/dummy.jpg';
             }
             if( empty($arGood['TYPE']) ){
@@ -151,6 +157,12 @@ class OrdersController extends PrototypeController
     {
         $this->layout = 'empty';
         $arSections = CatalogSections::find()->orderBy(['SORT' => SORT_DESC])->asArray()->all();
+        foreach($arSections as &$arSection){
+            if( empty($arSection['IMAGE']) || !file_exists(Yii::getAlias('@webroot') . $arSection['IMAGE']) ){
+                $arSection['IMAGE'] = '/uploads/dummy.jpg';
+            }
+        }
+        unset($arSection);
         array_unshift($arSections, ['ID' => 0, 'NAME' => 'Букеты', 'IMAGE' => '/uploads/bouquets.jpg']);
 
         return $this->render($this->viewPath . 'sections-list', [
@@ -493,8 +505,8 @@ class OrdersController extends PrototypeController
                         $obMoneyMovements->isNewRecord = true;
                         $obMoneyMovements->ID = NULL;
                         $obMoneyMovements->setAttributes([
-                            'TYPE' => 'INCOME',
-                            'AMOUNT' => $total - array_sum($arTransactions),
+                            'TYPE' => 'CONSUMPTION',
+                            'AMOUNT' => array_sum($arTransactions) - $total,
                             # TODO: Доделать получение ID Наличного счета
                             'MONEY_ACCOUNT' => 1,
                             'ORDER_ID' => $obOrders->ID,

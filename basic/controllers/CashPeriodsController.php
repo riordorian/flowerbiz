@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\MoneyMovements;
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 use app\models\Cashperiods;
 use app\models\CashperiodsSearch;

@@ -2,42 +2,20 @@
 
 namespace app\controllers;
 
+use app\controllers\AdminController;
 use Yii;
 use app\models\Events;
 use app\models\EventsSerch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * EventsTypesController implements the CRUD actions for EventsTypes model.
  */
-class EventsController extends Controller
+class EventsController extends AdminController
 {
-    /**
-     * Controller layout
-     * @var string
-     */
-    public $layout = 'admin.php';
 
-    /**
-     * Main body class
-     * @var string
-     */
-    public $bodyClass = 'animated_fill-none';
-
-    /**
-     * List items count
-     * @var string
-     */
-    public $listCount = '';
-
-    /**
-     * Boolean param, fix heading on page or not
-     * @var string
-     */
-    public $fixHeading = 'false';
-
+    public $viewPath = '/admin/events/';
     
     /**
      * @inheritdoc
@@ -64,7 +42,7 @@ class EventsController extends Controller
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $this->listCount = $dataProvider->getCount();
 
-        return $this->render('index', [
+        return $this->render($this->viewPath . 'index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -77,7 +55,7 @@ class EventsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+        return $this->render($this->viewPath . 'view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -92,9 +70,9 @@ class EventsController extends Controller
         $model = new Events();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
+            return $this->redirect([$this->viewPath . 'view', 'id' => $model->ID]);
         } else {
-            return $this->render('create', [
+            return $this->render($this->viewPath . 'create', [
                 'model' => $model,
             ]);
         }
@@ -111,9 +89,9 @@ class EventsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
+            return $this->redirect([$this->viewPath . 'view', 'id' => $model->ID]);
         } else {
-            return $this->render('update', [
+            return $this->render($this->viewPath . 'update', [
                 'model' => $model,
             ]);
         }
@@ -141,7 +119,7 @@ class EventsController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = EventsTypes::findOne($id)) !== null) {
+        if (($model = Events::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

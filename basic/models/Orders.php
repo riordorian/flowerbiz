@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 
 /**

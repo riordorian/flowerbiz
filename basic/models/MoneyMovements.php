@@ -2,7 +2,7 @@
 
 namespace app\models;
 
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 use yii\base\Exception;
 use yii\db\Transaction;
@@ -73,6 +73,7 @@ class MoneyMovements extends Prototype
             'MONEY_ACCOUNT_FROM' => 'Счет',
             'ORDER_ID' => 'ID заказа',
             'DATE' => 'Дата операции',
+            'dateFormatted' => 'Дата операции',
             'COMMENT' => 'Комментарий',
             'USER_ID' => 'Ответственный за операцию',
             'CASHBOX_ID' => 'Касса',
@@ -113,7 +114,6 @@ class MoneyMovements extends Prototype
         return parent::beforeValidate();
     }
 
-
 /**
      * Making
      * Transactions
@@ -135,6 +135,8 @@ class MoneyMovements extends Prototype
             else{
                 $bTransitTransaction = true;
             }
+            
+
             
             $arAttrs = $this->getAttributes();
             $newAccount = $arAttrs['MONEY_ACCOUNT'];
@@ -211,13 +213,18 @@ class MoneyMovements extends Prototype
         return $this->hasOne(MoneyAccounts::className(), ['ID' => 'MONEY_ACCOUNT']);
     }
 
-        /**
-         * Relation with moneyAccounts
-         *
-         * @return \yii\db\ActiveQuery
-         */
-        public function getUser()
-        {
-            return $this->hasOne(User::className(), ['id' => 'USER_ID'])->inverseOf('moneyMovements');
-        }
+    /**
+     * Relation with moneyAccounts
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUser()
+    {
+        return $this->hasOne(User::className(), ['id' => 'USER_ID'])->inverseOf('moneyMovements');
+    }
+
+    public function getDateFormatted()
+    {
+        return date('d.m.Y H:i:s', strtotime($this->DATE));
+    }
 }

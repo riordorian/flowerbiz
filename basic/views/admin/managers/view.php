@@ -1,6 +1,6 @@
 <?php
 
-use budyaga\users\models\User;
+use app\models\User;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 

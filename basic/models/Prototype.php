@@ -105,37 +105,34 @@ class Prototype extends \yii\db\ActiveRecord
      */
     public function beforeValidate()
     {
-        if( $this->load(Yii::$app->request->post()) ){
-            $arDateProps = static::getDateProps();
-            $arDate = [];
+        $arDateProps = static::getDateProps();
+        $arDate = [];
 
-            if( !empty($arDateProps['PROP_NAME']) ){
-                if( !in_array('YEAR', $arDateProps['DATE_PARTS']) ){
-                    array_unshift($arDateProps['DATE_PARTS'], 'YEAR');
-                }
-
-                foreach($arDateProps['DATE_PARTS'] as $partName){
-                    switch($partName){
-                        case 'DAY':
-                            $datePart = 'd';
-                            break;
-                        case 'MONTH':
-                            $datePart = 'm';
-                            break;
-                        case 'YEAR':
-                            $datePart = 'Y';
-                            break;
-                        default:
-                            $datePart = 'd';
-                            break;
-                    }
-
-                    $arDate[] = empty($this->{$arDateProps['PROP_NAME'] . '_' . $partName}) ? date($datePart) : $this->{$arDateProps['PROP_NAME'] . '_' . $partName};
-                }
-
-                $this->{$arDateProps['PROP_NAME']} =  implode('-', $arDate);
+        if( !empty($arDateProps['PROP_NAME']) ){
+            if( !in_array('YEAR', $arDateProps['DATE_PARTS']) ){
+                array_unshift($arDateProps['DATE_PARTS'], 'YEAR');
             }
 
+            foreach($arDateProps['DATE_PARTS'] as $partName){
+                switch($partName){
+                    case 'DAY':
+                        $datePart = 'd';
+                        break;
+                    case 'MONTH':
+                        $datePart = 'm';
+                        break;
+                    case 'YEAR':
+                        $datePart = 'Y';
+                        break;
+                    default:
+                        $datePart = 'd';
+                        break;
+                }
+
+                $arDate[] = empty($this->{$arDateProps['PROP_NAME'] . '_' . $partName}) ? date($datePart) : $this->{$arDateProps['PROP_NAME'] . '_' . $partName};
+            }
+
+            $this->{$arDateProps['PROP_NAME']} =  implode('-', $arDate);
         }
 
         return parent::beforeValidate();

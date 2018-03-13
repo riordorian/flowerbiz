@@ -5066,3 +5066,230 @@ $_SERVER = [
     'argv' => []
     'argc' => 0
 ]
+2018-03-13 14:41:55 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][trace][flower] imagejpeg(/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/uploads/CatalogProducts/SECTION_7.jpg): failed to open stream: No such file or directory
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/CATALOGPRODUCTS.php:110
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/GoodsSupplies.php:120
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/GoodSupplyController.php:135
+2018-03-13 14:41:55 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][info][application] $_GET = [
+    'id' => '12'
+]
+
+$_POST = [
+    '_csrf' => 'AxIHwsqyBNXHmWl-7baJZgvlj5E4hnHzyyTJf-1Eb-xreU2Mi4BbufWgNj2D1dEgW9K9wlDqRZ6kRYwxugsiuw=='
+    'GoodsSupplies' => [
+        'ID' => '27'
+        'GOOD_SUPPLY_ID' => '12'
+        'GOOD_ID' => '7'
+        'AMOUNT' => '10'
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => '293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX\";}'
+    'advanced-backend' => 'db9043f885349e4927775964e5e8fbb8'
+    '_csrf-backend' => '49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO\";}'
+    'advanced-frontend' => '617f95d8fcb9cb7a78e8c497bd856044'
+    '_csrf' => '8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hkJNA2_l29_CncXFP72Shl4moaENWOMW\";}'
+    '_identity' => '9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"RG6kZgooxV8oful04NTu0p-WzqZoD18M\",2592000]\";}'
+    'PHPSESSID' => '6a43daa6c49b96fa56a33be7c13f807d'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'flowerbiz.local:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '668'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://flowerbiz.local:8888'
+    'HTTP_X_CSRF_TOKEN' => 'AxIHwsqyBNXHmWl-7baJZgvlj5E4hnHzyyTJf-1Eb-xreU2Mi4BbufWgNj2D1dEgW9K9wlDqRZ6kRYwxugsiuw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryQ0eLnkORNdIinCBp'
+    'HTTP_REFERER' => 'http://flowerbiz.local:8888/admin/good-supply/update/?id=12'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf-frontend=293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX%22%3B%7D; advanced-backend=db9043f885349e4927775964e5e8fbb8; _csrf-backend=49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO%22%3B%7D; advanced-frontend=617f95d8fcb9cb7a78e8c497bd856044; _csrf=8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hkJNA2_l29_CncXFP72Shl4moaENWOMW%22%3B%7D; _identity=9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22RG6kZgooxV8oful04NTu0p-WzqZoD18M%22%2C2592000%5D%22%3B%7D; PHPSESSID=6a43daa6c49b96fa56a33be7c13f807d'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.31 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.0.15 mod_ssl/2.2.31 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'flowerbiz.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/index.php'
+    'REMOTE_PORT' => '56846'
+    'REDIRECT_QUERY_STRING' => 'id=12'
+    'REDIRECT_URL' => '/basic/web/admin/good-supply/update/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=12'
+    'REQUEST_URI' => '/admin/good-supply/update/?id=12'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1520948515.06
+    'REQUEST_TIME' => 1520948515
+    'argv' => [
+        0 => 'id=12'
+    ]
+    'argc' => 1
+]
+2018-03-13 14:41:55 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][trace][flower] imagejpeg(/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/uploads/CatalogProducts/SECTION_2.jpg): failed to open stream: No such file or directory
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/CATALOGPRODUCTS.php:110
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/GoodsSupplies.php:120
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/GoodSupplyController.php:135
+2018-03-13 14:41:55 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][info][application] $_GET = [
+    'id' => '12'
+]
+
+$_POST = [
+    '_csrf' => 'AxIHwsqyBNXHmWl-7baJZgvlj5E4hnHzyyTJf-1Eb-xreU2Mi4BbufWgNj2D1dEgW9K9wlDqRZ6kRYwxugsiuw=='
+    'GoodsSupplies' => [
+        'ID' => '28'
+        'GOOD_SUPPLY_ID' => '12'
+        'GOOD_ID' => '2'
+        'AMOUNT' => '10'
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => '293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX\";}'
+    'advanced-backend' => 'db9043f885349e4927775964e5e8fbb8'
+    '_csrf-backend' => '49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO\";}'
+    'advanced-frontend' => '617f95d8fcb9cb7a78e8c497bd856044'
+    '_csrf' => '8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hkJNA2_l29_CncXFP72Shl4moaENWOMW\";}'
+    '_identity' => '9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"RG6kZgooxV8oful04NTu0p-WzqZoD18M\",2592000]\";}'
+    'PHPSESSID' => '6a43daa6c49b96fa56a33be7c13f807d'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'flowerbiz.local:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '668'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://flowerbiz.local:8888'
+    'HTTP_X_CSRF_TOKEN' => 'AxIHwsqyBNXHmWl-7baJZgvlj5E4hnHzyyTJf-1Eb-xreU2Mi4BbufWgNj2D1dEgW9K9wlDqRZ6kRYwxugsiuw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary2fg1Ht7g1T0yUDWd'
+    'HTTP_REFERER' => 'http://flowerbiz.local:8888/admin/good-supply/update/?id=12'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf-frontend=293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX%22%3B%7D; advanced-backend=db9043f885349e4927775964e5e8fbb8; _csrf-backend=49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO%22%3B%7D; advanced-frontend=617f95d8fcb9cb7a78e8c497bd856044; _csrf=8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hkJNA2_l29_CncXFP72Shl4moaENWOMW%22%3B%7D; _identity=9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22RG6kZgooxV8oful04NTu0p-WzqZoD18M%22%2C2592000%5D%22%3B%7D; PHPSESSID=6a43daa6c49b96fa56a33be7c13f807d'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.31 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.0.15 mod_ssl/2.2.31 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'flowerbiz.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/index.php'
+    'REMOTE_PORT' => '56873'
+    'REDIRECT_QUERY_STRING' => 'id=12'
+    'REDIRECT_URL' => '/basic/web/admin/good-supply/update/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=12'
+    'REQUEST_URI' => '/admin/good-supply/update/?id=12'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1520948515.06
+    'REQUEST_TIME' => 1520948515
+    'argv' => [
+        0 => 'id=12'
+    ]
+    'argc' => 1
+]
+2018-03-13 14:43:52 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][trace][flower] imagejpeg(/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/uploads/CatalogProducts/SECTION_2.jpg): failed to open stream: No such file or directory
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/CATALOGPRODUCTS.php:110
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/GoodsSupplies.php:120
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/GoodWritesOffController.php:136
+2018-03-13 14:43:51 [127.0.0.1][1][6a43daa6c49b96fa56a33be7c13f807d][info][application] $_GET = [
+    'id' => '13'
+]
+
+$_POST = [
+    '_csrf' => 'aO9UicoC162OnXT48C6bsMMG1z83IXIyok3KCFzLxhsAhB7HizCIwbykK7ueTcP2kzHlbF9NRl_NLI9GC4SLTA=='
+    'GoodsSupplies' => [
+        'GOOD_SUPPLY_ID' => '13'
+        'GOOD_ID' => '2'
+        'AMOUNT' => '1'
+    ]
+]
+
+$_COOKIE = [
+    '_csrf-frontend' => '293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba:2:{i:0;s:14:\"_csrf-frontend\";i:1;s:32:\"RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX\";}'
+    'advanced-backend' => 'db9043f885349e4927775964e5e8fbb8'
+    '_csrf-backend' => '49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO\";}'
+    'advanced-frontend' => '617f95d8fcb9cb7a78e8c497bd856044'
+    '_csrf' => '8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"hkJNA2_l29_CncXFP72Shl4moaENWOMW\";}'
+    '_identity' => '9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"RG6kZgooxV8oful04NTu0p-WzqZoD18M\",2592000]\";}'
+    'PHPSESSID' => '6a43daa6c49b96fa56a33be7c13f807d'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'flowerbiz.local:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '561'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://flowerbiz.local:8888'
+    'HTTP_X_CSRF_TOKEN' => 'aO9UicoC162OnXT48C6bsMMG1z83IXIyok3KCFzLxhsAhB7HizCIwbykK7ueTcP2kzHlbF9NRl_NLI9GC4SLTA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryS2eRPtlsSlZ70DF0'
+    'HTTP_REFERER' => 'http://flowerbiz.local:8888/admin/good-writes-off/update/?id=13'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf-frontend=293ab390fcefa9d943486472d05966842cd08e339ebc8368ade94a6113e771aba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22RXMLNczUFxghyL1ZaTsMdRV0ZgkcijlX%22%3B%7D; advanced-backend=db9043f885349e4927775964e5e8fbb8; _csrf-backend=49155d1334a352ad9d8d003da23f9d9d6d3562cda5c6cc7e2a3d291da0389b02a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22l21qBipXZr-ZmcAjxrVfSz6MHuCT0KGO%22%3B%7D; advanced-frontend=617f95d8fcb9cb7a78e8c497bd856044; _csrf=8635d8a0687f9c62cf537bd868ce9cebd7d07b71c14237a2a95476379d58c637a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22hkJNA2_l29_CncXFP72Shl4moaENWOMW%22%3B%7D; _identity=9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22RG6kZgooxV8oful04NTu0p-WzqZoD18M%22%2C2592000%5D%22%3B%7D; PHPSESSID=6a43daa6c49b96fa56a33be7c13f807d'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.31 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.0.15 mod_ssl/2.2.31 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'flowerbiz.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/index.php'
+    'REMOTE_PORT' => '57134'
+    'REDIRECT_QUERY_STRING' => 'id=13'
+    'REDIRECT_URL' => '/basic/web/admin/good-writes-off/update/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=13'
+    'REQUEST_URI' => '/admin/good-writes-off/update/?id=13'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1520948631.82
+    'REQUEST_TIME' => 1520948631
+    'argv' => [
+        0 => 'id=13'
+    ]
+    'argc' => 1
+]

@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Managers;
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 use app\models\Clients;
 use yii\data\ActiveDataProvider;

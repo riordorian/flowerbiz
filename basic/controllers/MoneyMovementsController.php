@@ -46,7 +46,7 @@ class MoneyMovementsController extends AdminController
 
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->setSort([
-                'defaultOrder' => [ 'DATE' => SORT_DESC]
+                'defaultOrder' => ['ID' => SORT_DESC]
             ]
         );
         

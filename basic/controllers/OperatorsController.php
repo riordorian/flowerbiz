@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Operators;
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 use app\models\Clients;
 use yii\data\ActiveDataProvider;
@@ -96,6 +96,19 @@ class OperatorsController extends AdminController
                 'model' => $model,
             ]);
         }
+    }
+
+    /**
+     * Deletes an existing Operators model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
     }
 
 

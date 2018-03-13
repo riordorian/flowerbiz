@@ -12,32 +12,9 @@ use yii\filters\VerbFilter;
 /**
  * GiftRecipientsController implements the CRUD actions for GiftRecipients model.
  */
-class GiftRecipientsController extends Controller
+class GiftRecipientsController extends AdminController
 {
-    /**
-     * Controller layout
-     * @var string
-     */
-    public $layout = 'admin.php';
-
-    /**
-     * Main body class
-     * @var string
-     */
-    public $bodyClass = 'animated_fill-none';
-
-    /**
-     * List items count
-     * @var string
-     */
-    public $listCount = '';
-
-    /**
-     * Boolean param, fix heading on page or not
-     * @var string
-     */
-    public $fixHeading = 'false';
-    
+    public $viewPath = '/admin/gift-recipients/';
 
     /**
      * @inheritdoc
@@ -65,7 +42,7 @@ class GiftRecipientsController extends Controller
 
         $this->listCount = $dataProvider->getCount();
 
-        return $this->render('index', [
+        return $this->render($this->viewPath . 'index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -78,7 +55,7 @@ class GiftRecipientsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
+        return $this->render($this->viewPath . 'view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -93,9 +70,9 @@ class GiftRecipientsController extends Controller
         $model = new GiftRecipients();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
+            return $this->redirect([$this->viewPath . 'view', 'id' => $model->ID]);
         } else {
-            return $this->render('create', [
+            return $this->render($this->viewPath . 'create', [
                 'model' => $model,
             ]);
         }
@@ -112,9 +89,9 @@ class GiftRecipientsController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->ID]);
+            return $this->redirect([$this->viewPath . 'view', 'id' => $model->ID]);
         } else {
-            return $this->render('update', [
+            return $this->render($this->viewPath . 'update', [
                 'model' => $model,
             ]);
         }

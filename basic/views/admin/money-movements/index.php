@@ -45,6 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'MONEY_ACCOUNT',
                     'value' => 'moneyAccount.NAME'
                 ],
+                'dateFormatted',
                 'COMMENT',
                 [
                     'class' => 'yii\grid\ActionColumn',

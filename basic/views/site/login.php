@@ -26,10 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $form->field($model, 'password')->passwordInput(['placeholder' => 'Пароль']); ?>
 
-    <?= $form->field($model, 'rememberMe')->checkbox([
+    <?/*= $form->field($model, 'rememberMe')->checkbox([
         'template' => "<label class='checkbox-label'><div class=\"col-lg-12 icheckbox_square-green\">{input}</div>&nbsp;&nbsp;{labelTitle}</label>",
         'class' => 'widget i-check'
-    ])->label('Запомнить меня') ?>
+    ])->label('Запомнить меня') */?>
 
     <div class="form-group">
         <div class="col-lg-12">

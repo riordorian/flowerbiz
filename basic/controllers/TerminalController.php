@@ -9,7 +9,7 @@ use app\models\ClientsGroups;
 use app\models\ClientsTypes;
 use app\models\Orders;
 use budyaga\users\models\forms\LoginForm;
-use budyaga\users\models\User;
+use app\models\User;
 use Yii;
 
 class TerminalController extends \yii\web\Controller
