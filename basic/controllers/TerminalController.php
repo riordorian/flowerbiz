@@ -125,6 +125,9 @@ class TerminalController extends \yii\web\Controller
 
 
         echo json_encode($arClients);
+
+        # TODO: Вываливается exceprion на бою
+        die();
     }
 
 

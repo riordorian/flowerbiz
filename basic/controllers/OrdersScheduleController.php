@@ -75,6 +75,7 @@ class OrdersScheduleController extends Controller
     public function actionCreate()
     {
         $this->layout = 'empty.php';
+        $arReq = Yii::$app->request->getQueryParams();
         $model = new Orders();
         $bHasChanges = $model->load(Yii::$app->request->post());
 
@@ -99,6 +100,8 @@ class OrdersScheduleController extends Controller
 
             return $this->render($this->viewPath . 'create', [
                 'model' => $model,
+                'date' => empty($arReq['DATE']) ? '' : date('d.m.Y', $arReq['DATE']),
+
                 'arRecipients' => $arRecipients,
                 'arEvents' => $arEvents
             ]);
@@ -163,10 +166,12 @@ class OrdersScheduleController extends Controller
                 $obOrder->save();
                 
                 echo json_encode(['STATUS' => true]);
+                die();
             }
             catch(\Exception $e){
                 Yii::trace($e->getMessage(), 'flower');
                 echo json_encode(['STATUS' => false, 'ERROR_MESSAGE' => 'Updating order error']);
+                die();
             }
 
         }

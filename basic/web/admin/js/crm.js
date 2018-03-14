@@ -325,7 +325,7 @@ crm.widgets = new function()
             }
 
             $.ajax({
-                url: '/terminal/orders-schedule/create/',
+                url: '/terminal/orders-schedule/create/?DATE=' + new Date(date / 1000).getTime(),
                 method: 'post',
                 dataType: 'html',
                 success: function(response){

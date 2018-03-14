@@ -41,6 +41,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                     'format' => 'html'
                 ],
+				[
+					'attribute' => 'client.NAME',
+					'label' => 'Клиент'
+				],
                 [
                     'attribute' => 'ordersOperators',
                     'value' => function($dataProvider){

@@ -40,6 +40,7 @@ $this->title = $model->NAME;
         'attributes' => [
             'ID',
             'client.NAME',
+            'client.PHONE',
             'GIFT_RECIPIENT',
             'EVENT',
             'SUM_FORMATTED',
@@ -52,6 +53,7 @@ $this->title = $model->NAME;
                 'value' => $model->NEED_DELIVERY == 1 ? 'Да' : 'Нет',
             ],
             'OPERATOR',
+            'COMMENT',
         ],
     ]) ?>
 
