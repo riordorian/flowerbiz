@@ -49,7 +49,7 @@ body {
 .terminal__orders-wrap > .row {
   min-height: 100%;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: stretch; }
 .terminal__goods .product-box {
   cursor: pointer; }
