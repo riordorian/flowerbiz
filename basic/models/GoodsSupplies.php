@@ -35,7 +35,7 @@ class GoodsSupplies extends Prototype
             [['GOOD_SUPPLY_ID', 'GOOD_ID', 'AMOUNT'], 'integer'],
             [['PRICE'], 'number'],
             [['GOOD_SUPPLY_ID'], 'exist', 'skipOnError' => true, 'targetClass' => GoodSupply::className(), 'targetAttribute' => ['GOOD_SUPPLY_ID' => 'ID']],
-            [['GOOD_ID'], 'exist', 'skipOnError' => true, 'targetClass' => CATALOGPRODUCTS::className(), 'targetAttribute' => ['GOOD_ID' => 'ID']],
+            [['GOOD_ID'], 'exist', 'skipOnError' => true, 'targetClass' => CatalogProducts::className(), 'targetAttribute' => ['GOOD_ID' => 'ID']],
         ];
     }
 
