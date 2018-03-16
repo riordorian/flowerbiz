@@ -15,36 +15,13 @@ use yii\filters\VerbFilter;
 /**
  * GoodSupplyController implements the CRUD actions for GoodSupply model.
  */
-class GoodSupplyController extends Controller
+class GoodSupplyController extends AdminController
 {
     /**
      * @var string
      */
     protected $viewPath = '/admin/good-supply/';
 
-    /**
-     * Controller layout
-     * @var string
-     */
-    public $layout = 'admin.php';
-
-    /**
-     * Main body class
-     * @var string
-     */
-    public $bodyClass = 'animated_fill-none';
-
-    /**
-     * List items count
-     * @var string
-     */
-    public $listCount = '';
-
-    /**
-     * Main body class
-     * @var string
-     */
-    public $fixHeading = false;
 
     /**
      * @inheritdoc
@@ -55,7 +32,7 @@ class GoodSupplyController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['GET'],
                 ],
             ],
         ];

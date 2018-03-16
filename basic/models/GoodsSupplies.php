@@ -109,6 +109,12 @@ class GoodsSupplies extends Prototype
         }
         else{
             $goodAmountDiff = $amount;
+
+            $modelGoodsSupplies->setAttributes([
+				'GOOD_SUPPLY_ID' => $goodSupply,
+				'GOOD_ID' => $goodId,
+				'AMOUNT' => $amount,
+			]);
         }
 
         $obConnection = Yii::$app->db;
@@ -129,4 +135,16 @@ class GoodsSupplies extends Prototype
             $obTransaction->rollBack();
         }
     }
+
+
+	/**
+	 * Deleting good if that was deleted from supply
+	 */
+    public function afterDelete()
+	{
+		parent::afterDelete();
+
+		$modelGood = CatalogProducts::find()->where(['ID' => $this->GOOD_ID])->one();
+		$modelGood->updateCounters(['AMOUNT' => -$this->AMOUNT]);
+	}
 }

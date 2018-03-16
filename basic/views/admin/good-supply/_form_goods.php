@@ -49,7 +49,7 @@ use yii\widgets\ActiveForm;
 
         ?><div class="column_actions p-h-xxs">
         <label for="">&nbsp;</label><br>
-        <a href="/admin/clients-events/delete/" class="js-link_del" data-row-id="<?=$modelGoodsSupplies->ID?>">
+        <a href="/admin/good-supplies/delete/" class="js-link_del" data-row-id="<?=$modelGoodsSupplies->ID?>">
             <i class="fa fa-times"></i>
         </a>
         </div><?

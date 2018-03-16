@@ -167,6 +167,7 @@ $config = [
 
                 '/admin/good-supply/' => 'good-supply/index/',
                 '/admin/good-supply/<action:>' => 'good-supply/<action>',
+                '/admin/good-supplies/<action:>' => 'good-supplies/<action>',
 
                 '/admin/good-writes-off/' => 'good-writes-off/index/',
                 '/admin/good-writes-off/<action:>' => 'good-writes-off/<action>',
