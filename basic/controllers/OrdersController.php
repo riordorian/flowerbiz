@@ -186,6 +186,7 @@ class OrdersController extends PrototypeController
         $arGood = CatalogProducts::find()->where(['ID' => $goodId])->asArray()->one();
 
         echo json_encode($arGood);
+		die();
     }
 
 
@@ -205,6 +206,7 @@ class OrdersController extends PrototypeController
         }
 
         return json_encode($arDiscounts);
+		die();
 
     }
 
@@ -301,6 +303,7 @@ class OrdersController extends PrototypeController
         }
 
         return json_encode($arResult);
+		die();
     }
 
 
