@@ -40,6 +40,7 @@ class TerminalController extends \yii\web\Controller
             $obIdentity = User::findIdentity($userId);
             if( empty($obIdentity->email) ){
                 echo json_encode(['STATUS' => false]);
+				die();
                 return false;
             }
 
@@ -49,9 +50,11 @@ class TerminalController extends \yii\web\Controller
             $bAuthorized = $obUser->login();
             if( $bAuthorized ){
                 echo json_encode(['STATUS' => true]);
+                die();
             }
             else{
                 echo json_encode(['STATUS' => false, 'ERRORS' => $obUser->getErrors()]);
+				die();
             }
         }
     }
