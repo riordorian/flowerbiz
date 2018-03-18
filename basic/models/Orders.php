@@ -288,7 +288,7 @@ class Orders extends \yii\db\ActiveRecord
     public static function getBouquets()
     {
         $arBouquets = static::find()
-            ->where(['TYPE' => 'B', 'STATUS' => 'C'])
+            ->where(['TYPE' => ['B', 'P'], 'STATUS' => 'C'])
             ->select([
                 'ID',
                 'NAME',
