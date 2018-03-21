@@ -126,11 +126,7 @@ class TerminalController extends \yii\web\Controller
 
         $arClients = Clients::getClientsByNameOrPhone($arReq['QUERY']);
 
-
-        echo json_encode($arClients);
-
-        # TODO: Вываливается exceprion на бою
-        die();
+        return json_encode($arClients);
     }
 
 

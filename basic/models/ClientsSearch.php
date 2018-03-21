@@ -84,6 +84,7 @@ class ClientsSearch extends Clients
         $query->andFilterWhere(['like', 'clients.NAME', $this->NAME])
             ->andFilterWhere(['like', 'clients_types.ID', $this->CLIENT_TYPE])
             ->andFilterWhere(['like', 'clients_groups.ID', $this->CLIENT_GROUP]);
+
             /*->andFilterWhere(['like', 'GENDER', $this->GENDER])
             ->andFilterWhere(['like', 'PHONE', $this->PHONE])
             ->andFilterWhere(['like', 'EMAIL', $this->EMAIL])
