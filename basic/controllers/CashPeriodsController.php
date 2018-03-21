@@ -75,7 +75,7 @@ class CashPeriodsController extends AdminController
             }*/
 
             $arUsersIds[] = $obMovement->USER_ID;
-            if($obMovement->moneyAccount->TYPE == 'CASH'){
+            if( $obMovement->moneyAccount->TYPE == 'CASH' && strtotime($obMovement->DATE) != strtotime($model->OPENING_TIME) ){
                 $model->CASH_INCOMES = $model->CASH_INCOMES + ($obMovement->TYPE == 'INCOME' ? 1 : -1) * $obMovement->AMOUNT;
             }
             elseif( $obMovement->moneyAccount->TYPE == 'CARD' ){
@@ -144,9 +144,17 @@ class CashPeriodsController extends AdminController
                 throw new \Exception('Model not found');
             }            
             $obModel->CLOSING_TIME = date('Y-m-d H:i:s');
-            
+
+			$arMMovements = $obModel->getCashPeriodOperations($obModel->CASHBOX_ID, $obModel->CLOSING_TIME, $obModel->OPENING_TIME);
+			$obModel->CURRENT_CASH = $obModel->OPENING_CASH;
+			foreach($arMMovements as $obMovement){
+				if( $obMovement->moneyAccount->TYPE == 'CASH' && strtotime($obMovement->DATE) != strtotime($obModel->OPENING_TIME) ){
+					$obModel->CURRENT_CASH += ($obMovement->TYPE == 'INCOME' ? 1 : -1) * $obMovement->AMOUNT;
+				}
+			}
+
             if( $obModel->save() ){
-                return json_encode(['STATUS' => true, 'CALLBACK' => 'closeCashperiod']);
+				echo json_encode(['STATUS' => true, 'CALLBACK' => 'closeCashperiod']); die();
             }
         }
         catch(\Exception $e){

@@ -90,7 +90,6 @@ class MoneyMovements extends Prototype
         if( $this->load($arPost) ){
             $arAttrs = $this->getAttributes();
 
-
             # Creating name
             if( !empty($arAttrs['DATE']) && !empty($arAttrs['TYPE']) && empty($arAttrs['NAME']) ){
                 $this->NAME = $this->arOpTypes[$arAttrs['TYPE']] . ' ' . $arAttrs['DATE'];
@@ -131,8 +130,6 @@ class MoneyMovements extends Prototype
             else{
                 $bTransitTransaction = true;
             }
-            
-
             
             $arAttrs = $this->getAttributes();
             $newAccount = $arAttrs['MONEY_ACCOUNT'];
@@ -195,7 +192,7 @@ class MoneyMovements extends Prototype
                 }
             }
         }
-
+        
         return false;
     }
 

@@ -26,8 +26,8 @@
 							<b><?=$model->getAttributeLabel('OPENING_CASH')?>: </b> <?=$model->OPENING_CASH?> <i class="fa fa-rub"></i>
 						</p>
 						<p class="field field_opening-cash">
-							<b><?=( $intClosingTime < 0 ) ? $model->getAttributeLabel('CURRENT_CASH') : 'Денег на момент закрытия'?>: </b>
-							<?=( empty($arMoneyMovements) ) ? $model->OPENING_CASH : $model->OPENING_CASH + $model->CASH_INCOMES + $model->CARDS_INCOMES?>  <i class="fa fa-rub"></i>
+							<b><?=( $intClosingTime < 0 ) ? $model->getAttributeLabel('CURRENT_CASH') : 'Денег в кассе на момент закрытия'?>: </b>
+							<?=( empty($arMoneyMovements) ) ? $model->OPENING_CASH : $model->OPENING_CASH + $model->CASH_INCOMES?>  <i class="fa fa-rub"></i>
 						</p>
 						<p class="field field_opening-cash">
 							<b><?=$model->getAttributeLabel('PROFIT')?>: </b> <?=$model->CASH_INCOMES + $model->CARDS_INCOMES ?>  <i class="fa fa-rub"></i>

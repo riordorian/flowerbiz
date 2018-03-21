@@ -293,6 +293,7 @@ class Orders extends \yii\db\ActiveRecord
                 'ID',
                 'NAME',
                 'IMAGE',
+                'TYPE',
                 'RETAIL_PRICE' => 'TOTAL',
             ])
             ->asArray()
@@ -300,7 +301,8 @@ class Orders extends \yii\db\ActiveRecord
 
         array_walk($arBouquets, function(&$arElem){
             $arElem['AMOUNT'] = 1;
-            $arElem['TYPE'] = 'BOUQUET';
+			$arElem['CAN_SELL'] = $arElem['TYPE'] == 'P' ? false : true;
+			$arElem['TYPE'] = 'BOUQUET';
             $arElem['catalogSection']['NAME'] = 'Букеты';
         });
         unset($arElement);

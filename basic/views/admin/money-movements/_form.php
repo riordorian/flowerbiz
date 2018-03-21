@@ -71,7 +71,7 @@ use yii\widgets\ActiveForm;
                     ]
                 );?>
 
-            <?= $form->field($model, 'DATE', ['options' => ['class' => 'col-md-6']])->textInput(['class' => 'form-control js-widget datetimepicker', 'value' => date('d.m.Y H:i:s')]) ?>
+            <?= $form->field($model, 'DATE', ['options' => ['class' => 'col-md-6']])->textInput(['class' => 'form-control js-widget datetimepicker', 'data-config' => ['format' => 'DD.MM.YYYY HH:mm:ss'], 'value' => date('d.m.Y H:i:s')]) ?>
         </div>
 
         <?= $form->field($model, 'COMMENT')->textarea(['rows' => 6]) ?>

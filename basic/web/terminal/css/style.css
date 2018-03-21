@@ -57,6 +57,8 @@ body {
   height: 180px;
   object-fit: cover;
   width: 100%; }
+.terminal__good .product-price__danger {
+  background-color: #ed5565; }
 .terminal__good:nth-of-type(4n+1) {
   clear: both; }
 .terminal__cart {

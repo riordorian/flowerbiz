@@ -1,6 +1,6 @@
 $leftSideColor: #f3f3f4;
 $mainColor: #1ab394;
-
+$redColor: #ed5565;
 
 body {
   background: $leftSideColor;
@@ -91,6 +91,11 @@ body {
     }
   }
   &__good{
+    .product-price{
+      &__danger{
+        background-color: $redColor;
+      }
+    }
     &:nth-of-type(4n+1){
       clear: both;
     }
