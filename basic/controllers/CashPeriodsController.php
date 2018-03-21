@@ -146,7 +146,7 @@ class CashPeriodsController extends AdminController
             $obModel->CLOSING_TIME = date('Y-m-d H:i:s');
             
             if( $obModel->save() ){
-                echo json_encode(['STATUS' => true, 'CALLBACK' => 'closeCashperiod']);
+                return json_encode(['STATUS' => true, 'CALLBACK' => 'closeCashperiod']);
             }
         }
         catch(\Exception $e){

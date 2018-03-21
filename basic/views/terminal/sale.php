@@ -78,13 +78,13 @@
 			</div><?
 		}
 
-		?><div class="form-group m-t-lg row">
+		?><!--<div class="form-group m-t-lg row">
 			<label class="col-md-4 col-sm-2 col-xs-2 control-label text-left">Закрыть без оплаты</label>
 
 			<div class="col-md-8 col-sm-4 col-xs-10 pull-right">
 				<input type="checkbox" placeholder="" name="CLOSE_WITHOUT_PAYMENT" class="form-control input-lg js-widget switcher">
 			</div>
-		</div>
+		</div>-->
 
 		<hr>
 		<h3 class="js-change text-lg">Сдача <span>0</span> <i class="fa fa-rub"></i></h3>

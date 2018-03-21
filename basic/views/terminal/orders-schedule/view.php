@@ -9,7 +9,7 @@ use yii\widgets\DetailView;
 
 $this->title = $model->NAME;
 ?>
-<div class="orders-schedule-view js-ajax-replaceable white-bg p-sm">
+<div class="orders-schedule-view js-ajax-replaceable white-bg p-sm js-event-view" data-id="<?=$model->ID?>">
 
     <h1 class="m-b-lg"><?= Html::encode($this->title) ?></h1>
 

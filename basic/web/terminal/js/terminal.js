@@ -661,8 +661,9 @@ terminal.blocks.addOrderEvent = function()
             data: obData,
             success: function(response)
             {
+                var response = '<div>' + response + '</div>';
                 if( $form.closest('.js-ajax-replaceable').length ){
-                    $formResult = $('<div>' + response + '</div>').find('.js-ajax-replaceable');
+                    $formResult = $(response).find('.js-ajax-replaceable');
                     crm.widgets.init($formResult)
                     $('.js-terminal__sidebar').html($formResult);
                 }
@@ -676,16 +677,28 @@ terminal.blocks.addOrderEvent = function()
                     var arStartTime = timeStart.split(':');
                     obDate.setHours(parseInt(arStartTime[0]));
                     obDate.setMinutes(parseInt(arStartTime[1]));
-
-                    newEvent.start = obDate;
                 }
+                else{
+                    obDate.setHours(0);
+                    obDate.setMinutes(0);
+                }
+                newEvent.start = obDate;
 
                 if( timeEnd != '' ){
                     var arEndTime = timeEnd.split(':');
                     obDate.setHours(parseInt(arEndTime[0]));
                     obDate.setMinutes(parseInt(arEndTime[1]));
+                }
+                else{
+                    obDate.setHours(0);
+                    obDate.setMinutes(0);
+                }
+                newEvent.end = obDate;
 
-                    newEvent.end = obDate;
+                // Event id
+                
+                if( $(response).find('.js-event-view').length && $(response).find('.js-event-view').data('id') > 0 ){
+                    newEvent.id = $(response).find('.js-event-view').data('id');
                 }
 
                 if( bInsert ){

@@ -34,7 +34,7 @@ class CatalogSections extends Prototype
         return [
             [['NAME'], 'required'],
             [['NAME'], 'string', 'max' => 50],
-            [['SORT'], 'integer'],
+            [['SORT'], 'default','value' => 999],
             [['UPLOAD'], 'file', 'skipOnEmpty' => true, 'extensions' => 'jpg, png', 'mimeTypes' => 'image/jpeg, image/png']
         ];
     }

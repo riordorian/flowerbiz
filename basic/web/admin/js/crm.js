@@ -309,7 +309,7 @@ crm.widgets = new function()
                 columnFormat: "ddd DD"
             }
         },
-        googleCalendarApiKey: 'AIzaSyBJT-1hsgo7LXiOlIOW_CqkBwNTna7xoZc',
+        // googleCalendarApiKey: 'AIzaSyBJT-1hsgo7LXiOlIOW_CqkBwNTna7xoZc',
         navLinks: true,
         editable: true,
         locale: 'ru',
@@ -394,7 +394,6 @@ crm.widgets = new function()
                dataType: 'json',
                success: function(response){
                    loading.hide();
-                   console.log(response);
                }
             });
         },
