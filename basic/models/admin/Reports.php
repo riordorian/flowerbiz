@@ -2,6 +2,7 @@
 
 namespace app\models\admin;
 
+use app\models\MoneyMovements;
 use app\models\Orders;
 use app\models\OrdersOperators;
 use app\models\Prototype;
@@ -65,7 +66,94 @@ class Reports extends Prototype
     }
 
 
-    public function getProfit($operatorId, $dateFrom = '', $dateTo = '')
+	/**
+	 * Getting profit for period
+	 *
+	 * @param string $dateFrom
+	 * @param string $dateTo
+	 *
+	 * @return array
+	 *
+	 */
+    public function getProfit($dateFrom = '', $dateTo = '')
     {
+    	$obOrders = Orders::find();
+		$obOperations = MoneyMovements::find()->andWhere(['ORDER_ID' => null]);
+		$obOrders->andFilterWhere(['PAYMENT_STATUS' => 'F', 'STATUS' => 'F']);
+
+		# Formatting date
+    	if( !empty($dateFrom) ){
+			$obStartTime = new \DateTime($dateFrom);
+			$dateFrom = $obStartTime->setTime(0, 0, 0)->format('Y-m-d H:i:s');
+    	}
+    	if( !empty($dateTo) ){
+			$obEndTime = new \DateTime($dateTo);
+			$dateTo = $obEndTime->setTime(23, 59, 59)->format('Y-m-d H:i:s');
+    	}
+
+    	# Building filters
+    	if( !empty($dateFrom) && !empty($dateTo) ){
+    	    $obOrders->andFilterWhere([
+    	    	'between', 
+				'SELLING_TIME',
+				$dateFrom,
+				$dateTo,
+			]);
+
+    	    $obOperations->andFilterWhere([
+				'between',
+				'DATE',
+				$dateFrom,
+				$dateTo,
+			]);
+    	}
+    	else{
+    		if( !empty($dateFrom) ){
+				$obOrders->andFilterWhere(['>=', 'SELLING_TIME', $dateFrom]);
+				$obOperations->andFilterWhere(['>=', 'DATE', $dateFrom]);
+    		}
+
+			if( !empty($dateTo) ){
+				$obOrders->andFilterWhere(['<=', 'SELLING_TIME', $dateTo]);
+				$obOperations->andFilterWhere(['<=', 'DATE', $dateTo]);
+			}
+		}
+		$obOrders->with(['ordersGoods', 'ordersGoods.good']);
+
+    	# Orders report
+		$arOrders = $obOrders->asArray()->all();
+
+		# Consumptions on buying goods
+		$goodsСonsumption = 0;
+		if( !empty($arOrders) ){
+			foreach($arOrders as $arOrder){
+				if( !empty($arOrder['ordersGoods']) ){
+					foreach($arOrder['ordersGoods'] as $arOrderGood){
+						$goodsСonsumption += $arOrderGood['AMOUNT'] * $arOrderGood['good']['BASE_PRICE'];
+					}
+				}
+			}
+		}
+
+		# Operations report
+		$arOperations = $obOperations->asArray()->all();
+		$arOperationsConsumptions = !empty($arOperations) ? array_filter($arOperations, function($arOperation){
+			return $arOperation['TYPE'] == 'CONSUMPTION';
+		}) : [];
+		$arOperationsIncomes = !empty($arOperations) ? array_filter($arOperations, function($arOperation){
+			return $arOperation['TYPE'] == 'INCOME';
+		}) : [];
+		$operationsConsumptionSum = !empty($arOperationsConsumptions) ? array_sum(array_column($arOperationsConsumptions, 'AMOUNT')) : 0;
+		$operationsIncomeSum = !empty($arOperationsIncomes) ? array_sum(array_column($arOperationsIncomes, 'AMOUNT')) : 0;
+
+		$arResult = [
+			'ORDERS' => $arOrders,
+			'GOODS_CONSUMPTION' => $goodsСonsumption,
+			'OPERATIONS' => $arOperations,
+			'CONSUMPTION' => $operationsConsumptionSum,
+			'INCOME' => $operationsIncomeSum
+		];
+
+    	return $arResult;
     }
 }

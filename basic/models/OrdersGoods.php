@@ -53,7 +53,7 @@ class OrdersGoods extends Prototype
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getOrder()
+    public function getOrders()
     {
         return $this->hasOne(Orders::className(), ['ID' => 'ORDER_ID'])->inverseOf('ordersGoods');
     }

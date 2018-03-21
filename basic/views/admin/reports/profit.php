@@ -14,33 +14,54 @@ $this->params['breadcrumbs'][] = $this->title;?>
 <? echo GridView::widget([
 	'dataProvider' => $dataProvider,
 	'summary' => false,
-	'showFooter' => true,
 	'columns' => [
-		['class' => 'yii\grid\SerialColumn'],
-		'ID',
 		[
-			'attribute' => 'SELLING_TIME',
-			'label' => 'Дата продажи',
-			'value' => function($arOrder){
-				return date('d.m.Y H:i:s', strtotime($arOrder['SELLING_TIME']));
-			}
+			'attribute' => 'ordersCount',
+			'label' => 'Количество заказов'
 		],
 		[
-			'attribute' => 'TOTAL',
-			'label' => 'Сумма заказа',
+			'attribute' => 'ordersSum',
+			'label' => 'Выручка по заказам',
 			'format' => 'html',
-			'value' => function($arOrder){
-				return number_format($arOrder['TOTAL'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
-			}
-		],
-		[
-			'attribute' => 'SALARY',
-			'label' => 'Заработано флористом',
-			'format' => 'html',
-			'value' => function($arOrder){
-				return number_format($arOrder['SALARY'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			'value' => function($dataProvider){
+				return number_format($dataProvider['ordersSum'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
 			},
-			'footer' => number_format($total, 0, '.', ' ') . ' <i class="fa fa-rub"></i>',
+		],
+		[
+			'attribute' => 'averageСheck',
+			'label' => 'Средний чек',
+			'format' => 'html',
+			'value' => function($dataProvider){
+				return number_format($dataProvider['averageСheck'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			},
+		],
+		[
+			'attribute' => 'goodsConsumption',
+			'label' => 'Затраты на продукцию'
+		],
+		[
+			'attribute' => 'operationsConsumptionSum',
+			'label' => 'Расходные операции',
+			'format' => 'html',
+			'value' => function($dataProvider){
+				return number_format($dataProvider['operationsConsumptionSum'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			},
+		],
+		[
+			'attribute' => 'operationsIncomeSum',
+			'label' => 'Приходные операции',
+			'format' => 'html',
+			'value' => function($dataProvider){
+				return number_format($dataProvider['operationsIncomeSum'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			},
+		],
+		[
+			'attribute' => 'final',
+			'label' => 'Прибыль',
+			'format' => 'html',
+			'value' => function($dataProvider){
+				return number_format($dataProvider['final'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			},
 		],
 	]
 ]);

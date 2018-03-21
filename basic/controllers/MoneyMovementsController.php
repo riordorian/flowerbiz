@@ -42,7 +42,6 @@ class MoneyMovementsController extends AdminController
     public function actionIndex()
     {
         $searchModel = new MoneyMovementsSearch();
-        $ob = new MoneyMovements();
 
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         $dataProvider->setSort([

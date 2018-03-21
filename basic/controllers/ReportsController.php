@@ -66,26 +66,44 @@ class ReportsController extends AdminController
     }
 
 
-
+	/**
+	 * Profit report building
+	 *
+	 * @return string
+	 */
     public function actionProfit()
     {
         $arSalaryOrders = [];
         $arReq = Yii::$app->request->get();
 
-        if( !empty($arReq['Salaries']['OPERATOR_ID']) ){
-            $obReports = new Reports();
-            $dateFrom = strtotime($arReq['Profit']['DATE_FROM'] . ' 00:00:00');
-            $dateTo = strtotime($arReq['Profit']['DATE_TO'] . ' 23:59:59');
-            $arSalaryOrders = $obReports->getProfit($dateFrom, $dateTo);
+        if( !empty($arReq['Profit']) ){
+			$obReports = new Reports();
+			$dateFrom = $arReq['Profit']['DATE_FROM'];
+			$dateTo = $arReq['Profit']['DATE_TO'];
+			$arProfit = $obReports->getProfit($dateFrom, $dateTo);
+			$ordersCount = !empty($arProfit['ORDERS']) ? count($arProfit['ORDERS']) : 0;
+			$ordersSum = $ordersCount > 0 ? array_sum(array_column($arProfit['ORDERS'], 'TOTAL')) : 0;
+
+
+
+			$arResult = [[
+				'ordersCount' => $ordersCount,
+				'ordersSum' => $ordersCount > 0 ? $ordersSum : 0,
+				'averageСheck' => $ordersCount > 0 ? $ordersSum / $ordersCount : 0,
+				'goodsConsumption' => $arProfit['GOODS_CONSUMPTION'],
+				'operationsConsumptionSum' => $arProfit['CONSUMPTION'],
+				'operationsIncomeSum' => $arProfit['INCOME'],
+				'final' => $ordersSum - $arProfit['GOODS_CONSUMPTION'] + $arProfit['INCOME'] - $arProfit['CONSUMPTION']
+			]];
         }
 
         $dataProvider = new ArrayDataProvider([
-            'allModels' => !empty($arSalaryOrders['ORDERS']) ? $arSalaryOrders['ORDERS'] : [],
+            'allModels' => !empty($arResult) ? $arResult : [],
         ]);
+        
 
         return $this->render($this->viewPath . 'profit', [
             'dataProvider' => $dataProvider,
-            'total' => !empty($arSalaryOrders['TOTAL']) ? $arSalaryOrders['TOTAL'] : 0
         ]);
     }
 

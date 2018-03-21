@@ -90,10 +90,6 @@ class MoneyMovements extends Prototype
         if( $this->load($arPost) ){
             $arAttrs = $this->getAttributes();
 
-            /*if( $this->isNewRecord && $arPost['RELOADED'] == 1 ){
-                */?><!--<pre><?/*print_r(123)*/?></pre>--><?/*
-                return true;
-            }*/
 
             # Creating name
             if( !empty($arAttrs['DATE']) && !empty($arAttrs['TYPE']) && empty($arAttrs['NAME']) ){

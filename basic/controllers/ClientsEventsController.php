@@ -16,7 +16,7 @@ class ClientsEventsController extends Controller
     {
         $bRes = $this->findModel($id)->delete();
         if( $bRes ){
-            echo json_encode(['STATUS' => 'SUCCESS']);
+            echo json_encode(['STATUS' => 'SUCCESS']); die();
         }
     }
 

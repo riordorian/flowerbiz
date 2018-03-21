@@ -69,6 +69,7 @@ $this->title = $model->NAME;
             echo Html::input('hidden', 'SUM', $model->TOTAL + $model->DISCOUNT);
             echo Html::input('hidden', 'CLIENT_ID', $model->CLIENT_ID);
             echo Html::input('hidden', 'ORDER_ID', $model->ID);
+            echo Html::input('hidden', 'PREPAYMENT', $model->PREPAYMENT);
 
             echo Html::a('Продажа', ['javascript:;'], ['class' => 'btn btn-primary btn-lg js-sale-link', 'data-open-type' => 'popup', 'data-href' => '/terminal/orders/sale/']);
             ActiveForm::end();

@@ -180,7 +180,7 @@ class OrdersController extends PrototypeController
     {
         $this->layout = 'empty';
         if( empty($goodId) ){
-            echo json_encode(['STATUS' => false, 'ERROR_MESSAGE' => 'Incorrect params']);
+            return json_encode(['STATUS' => false, 'ERROR_MESSAGE' => 'Incorrect params']);
         }
         
         $arGood = CatalogProducts::find()->where(['ID' => $goodId])->asArray()->one();

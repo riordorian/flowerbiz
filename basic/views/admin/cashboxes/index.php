@@ -27,7 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 //                'ID',
                 'NAME',
-                'SUMM',
+                [
+	                'attribute' => 'SUMM',
+					'value' => function ($dataProvider) {
+						return number_format($dataProvider->SUMM, 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+					},
+	                'format' => 'html'
+                ],
 
                /* [
                     'class' => 'yii\grid\ActionColumn',

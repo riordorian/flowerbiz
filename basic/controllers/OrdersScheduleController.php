@@ -176,7 +176,7 @@ class OrdersScheduleController extends Controller
 
         }
         else{
-            echo json_encode(['STATUS' => false, 'ERROR_MESSAGE' => 'Incorrect params']);
+            echo json_encode(['STATUS' => false, 'ERROR_MESSAGE' => 'Incorrect params']);die();
         }
 
 
