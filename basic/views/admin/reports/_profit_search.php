@@ -8,6 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\ProvidersSearch */
 /* @var $form yii\widgets\ActiveForm */
+$arReq = Yii::$app->getRequest()->queryParams;
 ?>
 
 <div class="providers-search">
