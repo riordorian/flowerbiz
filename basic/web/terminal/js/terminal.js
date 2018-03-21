@@ -124,14 +124,15 @@ terminal.blocks.findUser = function(query, process)
              * */
             matcher: function (arItem) {
                 var requestedPhone;
+                var name = arItem['SEARCH_NAME'].toUpperCase();
 
-                if( parseInt(this.query) > 0 && this.query.length == 10 ){
-                    requestedPhone = '+7 (' + this.query.substring(0, 3) + ') ' + this.query.substring(3, 6) + '-' + this.query.substring(6, 8) + '-' + this.query.substring(8);
+                if( parseInt(this.query) > 0 && this.query.length == 4 ){
+                    requestedPhone = this.query.substring(0, 2) + '-' + this.query.substring(2, 2);
                 }
 
                 if (
-                    arItem.hasOwnProperty('PHONE') && arItem.PHONE == requestedPhone
-                    || arItem['SEARCH_NAME'].indexOf(this.query) != -1
+                    arItem.hasOwnProperty('PHONE') && arItem.PHONE.indexOf(requestedPhone) !== -1
+                    || name.indexOf(this.query.toUpperCase()) != -1
                 ) {
                     return arItem.SEARCH_NAME;
                 }

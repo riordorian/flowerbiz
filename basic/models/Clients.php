@@ -133,13 +133,11 @@ class Clients extends Prototype
         $arClients = [];
 
         if( !empty($query) ){
-            $obClients = new Clients();
+            $obClients = Clients::find();
 
-            if( (int)$query > 0 && strlen($query) == 10 ){
-                $phone = '+7 (' . substr($query, 0, 3) . ') ' . substr($query, 3, 3) . '-' . substr($query, 6, 2) . '-' . substr($query, 8);
+            if( (int)$query > 0 && strlen($query) == 4 ){
                 $arClients = $obClients
-                    ->find()
-                    ->where(['PHONE' => $phone])
+                    ->where(['like', 'PHONE', substr($query, 0, 2) . '-' . substr($query, 2, 2)])
                     ->select([
                         'ID',
                         'NAME',
@@ -150,8 +148,7 @@ class Clients extends Prototype
             }
             else{
                 $arClients = $obClients
-                    ->find()
-                    ->where(['like', 'NAME', '%' . $query . '%', false])->asArray()->all();
+                    ->andFilterWhere(['like', 'clients.NAME', "$query"])->asArray()->all();
             }
         }
 
