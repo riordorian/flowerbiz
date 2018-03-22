@@ -233,7 +233,8 @@ class OrdersController extends PrototypeController
             'clientId' => empty($arReq['CLIENT_ID']) ? 0 : $arReq['CLIENT_ID'],
             'orderId' => empty($arReq['ORDER_ID']) ? '' : $arReq['ORDER_ID'],
             'sum' => empty($arReq['SUM']) ? 0 : $arReq['SUM'],
-            
+            'bOperatorWork' => empty($arReq['OPERATOR_WORK']) ? 0 : $arReq['OPERATOR_WORK'],
+
             'obMoneyAccounts' => new MoneyAccounts(),
             'obOrders' => new Orders(),
             'obOrdersGoods' => new OrdersGoods(),

@@ -112,7 +112,7 @@ class Orders extends \yii\db\ActiveRecord
     {
         return [
             [['NAME'], 'required'],
-            [['CLIENT_ID', 'GIFT_RECIPIENT_ID', 'EVENT_ID', 'NEED_DELIVERY'], 'integer'],
+            [['CLIENT_ID', 'GIFT_RECIPIENT_ID', 'EVENT_ID', 'NEED_DELIVERY', 'OPERATOR_WORK'], 'integer'],
             [['TOTAL', 'PREPAYMENT', 'DISCOUNT'], 'number'],
             [['RECEIVING_DATE_START', 'RECEIVING_DATE_END', 'CLOSING_DATE', 'SELLING_TIME'], 'safe'],
             [['COMMENT', 'RECEIVING_TIME_START', 'RECEIVING_TIME_END', 'STEP'], 'string'],

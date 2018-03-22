@@ -170,6 +170,7 @@ $arReq = Yii::$app->request->queryParams;
 						</p>
 						
 						<input type="hidden" name="CLIENT_ID" class="js-client-id-field" value="<?=empty( Yii::$app->request->queryParams['CLIENT_ID'] ) ? '' : Yii::$app->request->queryParams['CLIENT_ID']?>">
+						<input type="hidden" name="OPERATOR_WORK" value="1" class="js-operator-work-field">
 					</div>
 					<div class="clearfix"></div>
 					<div class="total js-sale-link disabled" data-href="/terminal/orders/sale/" data-open-type="popup">

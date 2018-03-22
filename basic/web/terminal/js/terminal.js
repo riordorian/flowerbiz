@@ -470,6 +470,7 @@ terminal.blocks.recalcSum = function()
 {
     $(document).on('change', '[name=WORK_PAYMENT]', function () {
         terminal.calcSum(parseInt($('.js-discount').val()), parseInt($('.js-bonus').val()), parseInt($('.js-bonus-limit').val()), 1000);
+        $('.js-operator-work-field').val($(this).is(':checked') ? 1 : 0);
     })
 }
 

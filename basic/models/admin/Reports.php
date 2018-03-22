@@ -4,6 +4,7 @@ namespace app\models\admin;
 
 use app\models\MoneyMovements;
 use app\models\Orders;
+use app\models\OrdersGoods;
 use app\models\OrdersOperators;
 use app\models\Prototype;
 use Yii;
@@ -44,6 +45,8 @@ class Reports extends Prototype
         $dateFrom = empty($dateFrom) ? date('Y-m-d H:i:s', strtotime(date('d.m.Y') . ' 00:00:00')) : date('Y-m-d H:i:s', $dateFrom);
         $dateTo = empty($dateTo) ? date('Y-m-d H:i:s', strtotime(date('d.m.Y') . ' 23:59:59')) : date('Y-m-d H:i:s', $dateTo);
 
+
+
         $query = Orders::find()
             ->leftJoin(OrdersOperators::tableName(), OrdersOperators::tableName() . '.ORDER_ID=' . Orders::tableName() . '.ID')
             ->addSelect([
@@ -51,11 +54,10 @@ class Reports extends Prototype
                 'TOTAL',
                 'SELLING_TIME'
             ])
-            ->andWhere([OrdersOperators::tableName() . '.OPERATOR_ID' => $operatorId])
             ->andWhere(['between', 'SELLING_TIME', $dateFrom, $dateTo])
-        ;
-
+            ->andWhere(['OPERATOR_WORK' => 1]);
         $arOrders = $query->all();
+
         foreach($arOrders as $obOrder){
             $arSalaryOrders['ORDERS'][$obOrder->ID] = $obOrder->getAttributes();
             $arSalaryOrders['ORDERS'][$obOrder->ID]['SALARY'] = $obOrder->TOTAL * $obOrder->ordersOperators[0]->operator->pay / (100 + $obOrder->ordersOperators[0]->operator->pay);
