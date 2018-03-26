@@ -7,7 +7,6 @@ use yii\widgets\ActiveForm;
 /* @var $model app\models\OrdersSchedule */
 /* @var $form yii\widgets\ActiveForm */
 
-
 $clockFieldTemplate = "<div class='form-group col-md-6'>
         {label}\n
         <div class='input-group m-b'>
@@ -76,7 +75,7 @@ $moneyFieldTemplate = "<div class='form-group'>
     <?= $form->field($model, 'COMMENT')->textarea() ?>
 
     <?= $form->field($model, 'TYPE')->hiddenInput(['value' => 'P'])->label(false) ?>
-    <?= $form->field($model, 'STATUS')->hiddenInput(['value' => 'N'])->label(false) ?>
+    <?= $form->field($model, 'STATUS')->hiddenInput(['value' => $model->isNewRecord ? 'N' : $model->STATUS])->label(false) ?>
 
     <div class="form-group">
         <?= Html::submitButton('<i class="fa fa-check"></i>&nbsp;Сохранить', ['class' => 'btn btn-primary js-add-order', 'data-insert' => empty($bInsert) ? 0 : 1]) ?>
