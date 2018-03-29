@@ -1,5 +1,5 @@
 <!--TODO: Сделать выравнивание блоков по высоте, если отличаются названия-->
-<? if( count($arGoods) > 12 ){
+<? if( count($arGoods) > 8 ){
 	?><p class="text-center m-b-lg clearfix">
 		<a href="javascript:;" class="js-all-goods link btn btn-md btn-primary">Все товары</a>
 	</p><?
