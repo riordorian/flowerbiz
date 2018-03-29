@@ -81,6 +81,9 @@ body {
   &__goods{
     &{
     }
+    &-box > div:nth-of-type(4n+1){
+      clear: both;
+    }
     .product-box{
       cursor: pointer;
     }
@@ -105,6 +108,11 @@ body {
       position: relative;
       border-left: 1px solid rgba(0, 0, 0, .1);
       padding-top: 15px;
+    }
+    
+    &__cart-goods{
+      min-height: 230px;
+      overflow: scroll;
     }
 
     .cart-good{
