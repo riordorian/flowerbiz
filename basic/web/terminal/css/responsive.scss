@@ -30,9 +30,16 @@ $tablet: 1024px;
       }
     }
   }
-  &__goods{
+  &__good{
+    @include respond-to(sm){
+      &:nth-of-type(3n+1){
+        clear: both;
+      }
+    }
     @include respond-to(xs){
-
+      &:nth-of-type(2n+1){
+        clear: both;
+      }
     }
   }
   &__cart{
@@ -59,5 +66,6 @@ $tablet: 1024px;
     position: fixed;
     right: 10px;
     bottom: 10px;
+    z-index: 9;
   }
 }

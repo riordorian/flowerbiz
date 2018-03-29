@@ -137,7 +137,7 @@ $arReq = Yii::$app->request->queryParams;
 				}
 
 				?><div class="text-center m-t-lg">
-					<a class="btn btn-primary js-bouquet js-sale-link hidden" data-href="/terminal/orders/bouquet/" data-open-type="popup">Сформировать букет</a>
+					<a class="btn btn-primary js-bouquet js-sale-link hidden m-b-md" data-href="/terminal/orders/bouquet/" data-open-type="popup">Сформировать букет</a>
 				</div>
 	
 				<div class="terminal__order-info">
