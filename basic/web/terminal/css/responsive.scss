@@ -46,6 +46,13 @@ $tablet: 1024px;
     @include respond-to(xs){
 
     }
+
+    &-goods{
+      @include respond-to(md){
+        min-height: 230px;
+        overflow: scroll;
+      }
+    }
   }
   &__order-info{
     @include respond-to(xs){

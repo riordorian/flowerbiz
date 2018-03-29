@@ -67,9 +67,6 @@ body {
   position: relative;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 15px; }
-.terminal__cart__cart-goods {
-  min-height: 230px;
-  overflow: scroll; }
 .terminal__cart .cart-good div:last-of-type {
   margin-top: 6px;
   cursor: pointer; }
