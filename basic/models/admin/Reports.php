@@ -46,7 +46,6 @@ class Reports extends Prototype
         $dateTo = empty($dateTo) ? date('Y-m-d H:i:s', strtotime(date('d.m.Y') . ' 23:59:59')) : date('Y-m-d H:i:s', $dateTo);
 
 
-
         $query = Orders::find()
             ->leftJoin(OrdersOperators::tableName(), OrdersOperators::tableName() . '.ORDER_ID=' . Orders::tableName() . '.ID')
             ->addSelect([
@@ -55,6 +54,7 @@ class Reports extends Prototype
                 'SELLING_TIME'
             ])
             ->andWhere(['between', 'SELLING_TIME', $dateFrom, $dateTo])
+            ->andWhere([OrdersOperators::tableName() . '.OPERATOR_ID' => $operatorId])
             ->andWhere(['OPERATOR_WORK' => 1]);
         $arOrders = $query->all();
 

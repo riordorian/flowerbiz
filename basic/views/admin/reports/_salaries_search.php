@@ -44,7 +44,7 @@ $arReq = Yii::$app->getRequest()->queryParams;
 
     <div class="form-group">
         <?= Html::submitButton('Расcчитать', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Сбросить', ['class' => 'btn btn-default']) ?>
+        <?= Html::a('Сбросить', '/admin/reports/salaries/', ['class' => 'btn btn-default']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
