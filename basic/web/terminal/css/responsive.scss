@@ -49,7 +49,7 @@ $tablet: 1024px;
 
     &-goods{
       @include respond-to(md){
-        min-height: 230px;
+        max-height: 230px;
         overflow: scroll;
       }
     }
