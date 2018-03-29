@@ -20,6 +20,16 @@ $tablet: 1024px;
 }
 
 .terminal{
+  &__orders-wrap{
+    & > .row{
+      @include respond-to(xs){
+        display: block;
+      }
+      @include respond-to(sm){
+        display: block;
+      }
+    }
+  }
   &__goods{
     @include respond-to(xs){
 

@@ -51,6 +51,8 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: stretch; }
+.terminal__goods-box > div:nth-of-type(4n+1) {
+  clear: both; }
 .terminal__goods .product-box {
   cursor: pointer; }
 .terminal__goods .product-image {
@@ -65,6 +67,9 @@ body {
   position: relative;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   padding-top: 15px; }
+.terminal__cart__cart-goods {
+  min-height: 230px;
+  overflow: scroll; }
 .terminal__cart .cart-good div:last-of-type {
   margin-top: 6px;
   cursor: pointer; }
