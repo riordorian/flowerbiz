@@ -1,4 +1,4 @@
 .idea
 basic/config/db.php
 basic/config/params.php
-basic/web/uloads/*
+basic/web/uploads/
