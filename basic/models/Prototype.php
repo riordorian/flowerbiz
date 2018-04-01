@@ -217,7 +217,7 @@ class Prototype extends \yii\db\ActiveRecord
 
         if( !empty($this->IMAGE) && file_exists($docRoot . $this->IMAGE) ){
             $image = $docRoot . $this->IMAGE;
-            $newImg = $docRoot . '/uploads/' . $className . '/SECTION_' . $this->ID . '.jpg';
+            $newImg = $docRoot . '/uploads/' . Yii::$app->params->clientCode . '/' . $className . '/SECTION_' . $this->ID . '.jpg';
             Image::thumbnail($image, 500, 360)->save($newImg, ['quality' => 70]);
             Image::crop($image, 500, 360)->save($newImg, ['quality' => 70]);
         }

@@ -1,4 +1,3 @@
 .idea
-basic/config/db.php
-basic/config/params.php
+basic/config/*
 basic/web/uploads/
