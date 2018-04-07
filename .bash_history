@@ -26,3 +26,17 @@ git fetch origin master
 git merge -X theirs origin/master
 git checkout basic/views/terminal/orders-schedule/_form.php
 git pull
+ls
+git status
+git add .
+git commit -a -m 'Promo commit'
+git push
+git pull
+git push
+git push
+git pull
+git pull
+git pull
+git pull
+git pull
+git pull
