@@ -1,4 +1,4 @@
-<div class="col-md-3 col-sm-3 col-xs-6 js-category-item" data-category-id="<?=$arCategory['ID']?>">
+<div class="col-md-3 col-sm-4 col-xs-6 terminal__category js-category-item" data-category-id="<?=$arCategory['ID']?>">
 	<div class="ibox">
 		<div class="ibox-content product-box">
 

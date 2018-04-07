@@ -26,7 +26,7 @@ TerminalAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="terminal__info p-h-xxs bg-muted border-bottom">
-    <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="col-md-3 col-sm-4 col-xs-4">
         <a class="navbar-minimalize btn btn-primary js-widget popover-widget" href="javascript:;" data-toggle="popover" data-placement="auto right" data-popover-content="#terminal-menu"><i class="fa fa-bars"></i> </a>
         <div id="terminal-menu" class="hidden">
             <p><a class="text-navy" href="/terminal/calendar/"><i class="fa fa-calendar m-r-xs"></i>Календарь</a></p>
@@ -46,13 +46,13 @@ TerminalAsset::register($this);
             }
         ?></div>
     </div>
-    <div class="col-md-5 col-sm-6 col-xs-6 text-center hidden-xs">
+    <div class="col-md-5 col-sm-4 col-xs-4 text-center hidden-xs">
         <div class="btn-group">
             <a href="/terminal/calendar/" class="btn btn-<?=Url::current() == '/terminal/calendar/' ? 'primary' : 'white'?>" type="button">Календарь</a>
             <a href="/terminal/orders/" class="btn btn-<?=Url::current() == '/terminal/orders/' ? 'primary' : 'white'?>" type="button">Товары</a>
         </div>
     </div>
-    <div class="col-md-4 pull-right text-right">
+    <div class="col-md-4 col-sm-4 col-xs-4 pull-right text-right">
         <p class="p-xxs m-n"><a class="text-navy" href="/logout/"><i class="fa fa-sign-out m-r-xs"></i><?=Yii::$app->user->identity->username?></a></p>
     </div>
     <div class="clearfix"></div>

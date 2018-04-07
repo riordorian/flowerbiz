@@ -1,5 +1,5 @@
 $mobile: 767px;
-$tablet: 1024px;
+$tablet: 991px;
 
 @mixin respond-to($size) {
   @if $size == xs {
@@ -25,19 +25,26 @@ $tablet: 1024px;
       @include respond-to(xs){
         display: block;
       }
-      @include respond-to(sm){
-        display: block;
-      }
     }
   }
-  &__good{
+  &__goods, &__cart{
+    @include respond-to(xs) {
+      height: auto;
+    }
+  }
+  &__category, &__good{
+    @include respond-to(xs){
+      &:nth-of-type(2n+1){
+        clear: both;
+      }
+    }
     @include respond-to(sm){
       &:nth-of-type(3n+1){
         clear: both;
       }
     }
-    @include respond-to(xs){
-      &:nth-of-type(2n+1){
+    @include respond-to(md){
+      &:nth-of-type(4n+1){
         clear: both;
       }
     }
@@ -63,8 +70,13 @@ $tablet: 1024px;
     }
   }
   &__cart-goods {
+    &{
+      @include respond-to(xs){
+        margin-top: 20px;
+      }
+    }
     .cart-good{
-
+      margin-top: 10px;
     }
 
   }

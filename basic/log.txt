@@ -28580,3 +28580,193 @@ $_SERVER = [
     'argv' => []
     'argc' => 0
 ]
+2018-04-01 17:58:30 [127.0.0.1][1][cfd4f8389b77855e5649afd0572620a7][trace][flower] Trying to get property of non-object
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/CatalogProducts.php:110
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/PrototypeController.php:72
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/CatalogProductsController.php:93
+2018-04-01 17:58:30 [127.0.0.1][1][cfd4f8389b77855e5649afd0572620a7][info][application] $_GET = [
+    'id' => '7'
+]
+
+$_POST = [
+    '_csrf' => 'tjgPFvGLstGzwTq719_6qWPYiO2hH_vnK9_1Q6D6mkfcUkRcmv_9mYCudvSyvrnuUYDcm5lUk4hM5scBy4vzdg=='
+    'CatalogProducts' => [
+        'NAME' => 'Тюльпан красный'
+        'CODE' => ''
+        'CATALOG_SECTION_ID' => '13'
+        'UPLOAD' => ''
+        'BASE_PRICE' => '600'
+        'RETAIL_PRICE' => '1200'
+    ]
+]
+
+$_FILES = [
+    'CatalogProducts' => [
+        'name' => [
+            'UPLOAD' => ''
+        ]
+        'type' => [
+            'UPLOAD' => ''
+        ]
+        'tmp_name' => [
+            'UPLOAD' => ''
+        ]
+        'error' => [
+            'UPLOAD' => 4
+        ]
+        'size' => [
+            'UPLOAD' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => 'debb66d1d9f018f7d0a993a72668599c34d60a8c66ffe2fcee520aecb674ef7ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"jjKJktOH3oLOeaCG2XTv8Khog92Bkqi1\";}'
+    'PHPSESSID' => 'cfd4f8389b77855e5649afd0572620a7'
+    '_identity' => '9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"RG6kZgooxV8oful04NTu0p-WzqZoD18M\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'flowerbiz.local:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '1103'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_ORIGIN' => 'http://flowerbiz.local:8888'
+    'HTTP_X_CSRF_TOKEN' => 'tjgPFvGLstGzwTq719_6qWPYiO2hH_vnK9_1Q6D6mkfcUkRcmv_9mYCudvSyvrnuUYDcm5lUk4hM5scBy4vzdg=='
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary3lczzaV7YDty9kWV'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://flowerbiz.local:8888/admin/catalog-products/update/?id=7'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=debb66d1d9f018f7d0a993a72668599c34d60a8c66ffe2fcee520aecb674ef7ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22jjKJktOH3oLOeaCG2XTv8Khog92Bkqi1%22%3B%7D; PHPSESSID=cfd4f8389b77855e5649afd0572620a7; _identity=9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22RG6kZgooxV8oful04NTu0p-WzqZoD18M%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.31 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.0.15 mod_ssl/2.2.31 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'flowerbiz.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/index.php'
+    'REMOTE_PORT' => '62347'
+    'REDIRECT_QUERY_STRING' => 'id=7'
+    'REDIRECT_URL' => '/basic/web/admin/catalog-products/update/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=7'
+    'REQUEST_URI' => '/admin/catalog-products/update/?id=7'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1522598310.22
+    'REQUEST_TIME' => 1522598310
+    'argv' => [
+        0 => 'id=7'
+    ]
+    'argc' => 1
+]
+2018-04-01 17:59:02 [127.0.0.1][1][cfd4f8389b77855e5649afd0572620a7][trace][flower] Trying to get property of non-object
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/models/CatalogProducts.php:110
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/PrototypeController.php:72
+    in /Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/controllers/CatalogProductsController.php:93
+2018-04-01 17:59:02 [127.0.0.1][1][cfd4f8389b77855e5649afd0572620a7][info][application] $_GET = [
+    'id' => '4'
+]
+
+$_POST = [
+    '_csrf' => 'waw7EYqyJMheJBTr6KhW0phBtstVAYR7vmx72jHzSQOrxnBb4cZrgG1LWKSNyRWVqhnivW1K7BTZVUmYWoIgMg=='
+    'CatalogProducts' => [
+        'NAME' => 'Товар 3'
+        'CODE' => 'Good3'
+        'CATALOG_SECTION_ID' => '3'
+        'UPLOAD' => ''
+        'BASE_PRICE' => '400'
+        'RETAIL_PRICE' => '450'
+    ]
+]
+
+$_FILES = [
+    'CatalogProducts' => [
+        'name' => [
+            'UPLOAD' => 'vk_kalendar.png'
+        ]
+        'type' => [
+            'UPLOAD' => 'image/png'
+        ]
+        'tmp_name' => [
+            'UPLOAD' => '/Applications/MAMP/tmp/php/phpjoiiV5'
+        ]
+        'error' => [
+            'UPLOAD' => 0
+        ]
+        'size' => [
+            'UPLOAD' => 577826
+        ]
+    ]
+]
+
+$_COOKIE = [
+    '_csrf' => 'debb66d1d9f018f7d0a993a72668599c34d60a8c66ffe2fcee520aecb674ef7ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"jjKJktOH3oLOeaCG2XTv8Khog92Bkqi1\";}'
+    'PHPSESSID' => 'cfd4f8389b77855e5649afd0572620a7'
+    '_identity' => '9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a:2:{i:0;s:9:\"_identity\";i:1;s:46:\"[1,\"RG6kZgooxV8oful04NTu0p-WzqZoD18M\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_REDIRECT_STATUS' => '200'
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'flowerbiz.local:8888'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '578915'
+    'HTTP_ACCEPT' => 'text/html, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://flowerbiz.local:8888'
+    'HTTP_X_CSRF_TOKEN' => 'waw7EYqyJMheJBTr6KhW0phBtstVAYR7vmx72jHzSQOrxnBb4cZrgG1LWKSNyRWVqhnivW1K7BTZVUmYWoIgMg=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryC8zs9raazypCGAjc'
+    'HTTP_REFERER' => 'http://flowerbiz.local:8888/admin/catalog-products/update/?id=4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_csrf=debb66d1d9f018f7d0a993a72668599c34d60a8c66ffe2fcee520aecb674ef7ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22jjKJktOH3oLOeaCG2XTv8Khog92Bkqi1%22%3B%7D; PHPSESSID=cfd4f8389b77855e5649afd0572620a7; _identity=9b935c43d682eae4f575ac65fe0e06252c2d80360b2bd77ba98605f06bcbbf99a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22RG6kZgooxV8oful04NTu0p-WzqZoD18M%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.2.31 (Unix) mod_wsgi/3.5 Python/2.7.13 PHP/7.0.15 mod_ssl/2.2.31 OpenSSL/1.0.2j DAV/2 mod_fastcgi/2.4.6 mod_perl/2.0.9 Perl/v5.24.0'
+    'SERVER_NAME' => 'flowerbiz.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '8888'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Applications/MAMP_HOSTS/htdocs/flowercrm.local/basic/web/index.php'
+    'REMOTE_PORT' => '62391'
+    'REDIRECT_QUERY_STRING' => 'id=4'
+    'REDIRECT_URL' => '/basic/web/admin/catalog-products/update/'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'id=4'
+    'REQUEST_URI' => '/admin/catalog-products/update/?id=4'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1522598342.19
+    'REQUEST_TIME' => 1522598342
+    'argv' => [
+        0 => 'id=4'
+    ]
+    'argc' => 1
+]

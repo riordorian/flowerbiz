@@ -32,6 +32,7 @@ class OrdersController extends PrototypeController
     public $viewPath = '/terminal/orders/';
 
     public $layout = 'terminal';
+    public $bodyClass = '';
 
     /**
      * @inheritdoc

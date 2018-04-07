@@ -4,10 +4,11 @@ use yii\widgets\Breadcrumbs;
 $this->title = 'Все товары';
 $this->params['breadcrumbs'][] = $this->title;
 $arReq = Yii::$app->request->queryParams;
+$this->context->bodyClass = '';
 
 ?><div class="terminal__orders-wrap container-fluid">
 	<div class="row">
-		<div class="terminal__goods col-md-8 col-sm-8 col-xs-12 space-15">
+		<div class="terminal__goods col-md-8 col-sm-8 col-xs-12">
 			<div class="row">
 				<form class="col-md-12">
 					<div class="input-group m-b">
@@ -28,16 +29,10 @@ $arReq = Yii::$app->request->queryParams;
 						?>Заведите категории товаров<?
 					}
 					else{
-						$i = 0;
 						foreach($arCategories as $arCategory){
 							echo $this->render('_category.php', [
 								'arCategory' => $arCategory
 							]);
-							$i++;
-	
-							if( $i % 4 == 0 ){
-								?><div class="clearfix"></div> <?
-							}
 						}
 					}
 				?></div>
