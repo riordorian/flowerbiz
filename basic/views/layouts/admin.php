@@ -47,7 +47,7 @@ AdminAsset::register($this);
                         </ul>
                     </div>
                      <div class="logo-element profile-element">
-                        FlowerBiz
+	                     FSHOP
                     </div>
                     <!--<div class="logo-element">
                         <img alt="image" class="img-circle" src="/assets/admin/img/logo.jpg" />
