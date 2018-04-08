@@ -33,7 +33,7 @@ AdminAsset::register($this);
 <!--                            <img alt="image" class="img-circle" src="/assets/admin/img/logo.jpg" />-->
                         </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false" href="#">
-                            <h2 class="clear"> <span class="block m-t-xs"> <strong class="font-bold">FlowerBiz</strong><b class="caret"></b></span>
+                            <h2 class="clear"> <span class="block m-t-xs"> <strong class="font-bold">FlowerShop</strong><b class="caret"></b></span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs"><?
 

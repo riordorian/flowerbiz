@@ -20,7 +20,7 @@ $this->context->fixHeading = 'true';
             ]
         ]);?>
 
-        <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'username')->textInput(['maxlength' => true])->label('Имя') ?>
         <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
         <?= $form->field($model, 'PASSWORD')->textInput(['maxlength' => true, 'type' => 'password']) ?>
         <?= $form->field($model, 'PASSWORD_CONFIRM')->textInput(['maxlength' => true, 'type' => 'password']) ?>
