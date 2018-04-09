@@ -66,8 +66,8 @@
 				->label($accountName);
 		}
 
-		if( !empty($bonus) ){
-			?><div class="form-group m-t-lg row">
+		/*if( !empty($bonus) ){
+			*/?><!--<div class="form-group m-t-lg row">
 				<label class="col-md-3 col-sm-2 col-xs-2 control-label text-left">Бонус</label>
 
 				<div class="col-md-8 col-sm-4 col-xs-10 pull-right">
@@ -76,8 +76,8 @@
 						<span class="input-group-addon"><i class="fa fa-rub"></i></span>
 					</div>
 				</div>
-			</div><?
-		}
+			</div>--><?/*
+		}*/
 
 		?><!--<div class="form-group m-t-lg row">
 			<label class="col-md-4 col-sm-2 col-xs-2 control-label text-left">Закрыть без оплаты</label>
