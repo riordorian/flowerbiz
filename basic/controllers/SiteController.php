@@ -9,7 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\ContactForm;
 
-class SiteController extends PrototypeController
+class SiteController extends Controller
 {
     /**
      * @inheritdoc
