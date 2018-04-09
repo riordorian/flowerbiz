@@ -478,7 +478,7 @@ class OrdersController extends PrototypeController
                 $bTransactionDone = true;
                 $obMoneyMovements = new MoneyMovements();
                 $obMoneyAccounts = new MoneyAccounts();
-                if( $obMoneyAccounts->load($arReq) && $obOrders['TYPE'] != 'B' ){
+                if( $obMoneyAccounts->load($arReq) ){
                     $arTransactions = $obMoneyAccounts->getAttribute('BALANCE');
                     foreach($arTransactions as $accId => $sum){
                         if( $sum == 0 ){

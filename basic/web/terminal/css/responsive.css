@@ -19,7 +19,7 @@
     clear: both; } }
 @media only screen and (min-width: 991px) {
   .terminal__cart-goods {
-    max-height: 230px;
+    height: calc(100vh - 400px);
     overflow: scroll; } }
 @media only screen and (max-width: 767px) {
   .terminal__order-info {

@@ -18,7 +18,9 @@ class PrototypeController extends Controller
         }
 
         # If user is authorized and trying to go into admin section
-        if( strpos(Url::current(), '/admin/') === 0 && !Yii::$app->user->can('adminWork') && !Yii::$app->request->isAjax ){
+        if( (strpos(Url::current(), '/admin/') === 0 || strpos(Url::current(), '/login/') === 0 || strpos(Url::current(), '/index/') === 0)
+	        && !Yii::$app->user->can('adminWork')
+	        && !Yii::$app->request->isAjax ){
             return $this->redirect('/terminal/calendar/', 302)->send();
         }
 
@@ -26,15 +28,6 @@ class PrototypeController extends Controller
     }
    
 
-    /**
-     * Display admin homepage.
-     *
-     * @return string
-     */
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
 
     /**
      * Save model

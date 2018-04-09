@@ -21,6 +21,7 @@ $this->context->bodyClass = '';
 				<div class="col-md-12 m-b-lg"><?
 					echo Breadcrumbs::widget([
 						'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+						'homeLink' => ['label' => 'Главная', 'url' => '/terminal/orders/'],
 					]);
 				?></div>
 
