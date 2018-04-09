@@ -60,7 +60,7 @@ AdminAsset::register($this);
                     <ul class="nav nav-second-level">
                         <li><a href="/admin/clients/">Клиенты</a></li>
                         <li><a href="/admin/clients-groups/">Группы клиентов</a></li>
-                        <li><a href="/admin/loyalty-programs/">Программы лояльности</a></li>
+<!--                        <li><a href="/admin/loyalty-programs/">Программы лояльности</a></li>-->
                     </ul>
                 </li>
                 <li>
@@ -84,7 +84,7 @@ AdminAsset::register($this);
                 <li>
                     <a href="/site/reports/"><i class="fa fa-table"></i> <span class="nav-label">Отчеты</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a href="/admin/orders/">Заказы</a></li>
+                        <li><a href="/admin/orders/">Продажи</a></li>
                         <li><a href="/admin/reports/salaries/">Зарплаты</a></li>
                         <li><a href="/admin/reports/profit/">Прибыль</a></li>
                     </ul>

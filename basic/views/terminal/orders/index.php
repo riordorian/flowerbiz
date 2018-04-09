@@ -149,16 +149,16 @@ $this->context->bodyClass = '';
 							<span class="pull-right"><span>0</span> <i class="fa fa-rub"></i></span>
 							<input type="hidden" class="js-discount" name="DISCOUNT" value="0">
 						</p>
-						<p>
+						<!--<p>
 							<span>Баллы</span>
 							<span class="pull-right"><span>0</span> </span>
 							<input type="hidden" class="js-bonus-limit" name="BONUS" value="0">
-						</p>
-						<p>
+						</p>-->
+						<!--<p>
 							<span>Баллов за покупку</span>
 							<span class="pull-right"><span>0</span> </span>
 							<input type="hidden" class="js-bonus" name="BONUS" value="0">
-						</p>
+						</p>-->
 						<p>
 							<span>Предоплата</span>
 							<span class="pull-right"><span><?= empty($arOrderInfo['PREPAYMENT']) ? 0 : $arOrderInfo['PREPAYMENT']?></span> <i class="fa fa-rub"></i></span>
