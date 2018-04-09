@@ -32,10 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'class' => 'yii\grid\ActionColumn',
                     'contentOptions' => ['class' => 'text-right column column_actions']
                 ],
-                [
+               /* [
                     'attribute' => 'LOYALTY_PROGRAM',
                     'value' => 'loyaltyPrograms.NAME',
-                ],
+                ],*/
             ],
             'tableOptions' => [
                 'class' => 'table table-striped'
