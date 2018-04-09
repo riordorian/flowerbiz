@@ -10,9 +10,6 @@ $this->title = 'Заказы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clients-types-index">
-    <p>
-        <?= Html::a('<i class="fa fa-plus"></i>', ['create'], ['class' => 'btn btn-primary btn-lg btn-circle btn-add']) ?>
-    </p>
     <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <div class="js-replaceable-container">
