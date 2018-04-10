@@ -14,7 +14,7 @@ class PrototypeController extends Controller
     public function beforeAction($action)
     {
         if( Yii::$app->getUser()->isGuest ){
-            return $this->redirect('/terminal/login/', 302)->send();
+            return $this->redirect('/login/', 302)->send();
         }
 
         # If user is authorized and trying to go into admin section
