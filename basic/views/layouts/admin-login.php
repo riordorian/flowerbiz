@@ -20,17 +20,19 @@ AdminAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+
 </head>
 <body class="gray-bg">
 <?php $this->beginBody() ?>
-<h1 class="logo-name text-center">FlowerBiz</h1>
+<h1 class="logo-name text-center">FlowerShop</h1>
 <div class="middle-box text-center loginscreen animated fadeInDown">
     <div>
-        <h3>Welcome to FlowerBiz</h3>
+        <h3>Welcome to FlowerShop</h3>
 
         <?=$content?>
 
-        <p class="m-t"> <small>FlowerBiz &copy; 2016 - <?=date('Y')?></small> </p>
+        <p class="m-t"> <small>FlowerShop &copy; 2016 - <?=date('Y')?></small> </p>
     </div>
 </div>
 
