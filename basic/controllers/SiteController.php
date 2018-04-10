@@ -61,11 +61,11 @@ class SiteController extends Controller
         if( $bIsGuest ){
             switch( $this->getRoute() ){
                 case 'site/admin':
+				case 'site/index':
                     return $this->redirect('/login/');
 
                     break;
                 case 'site/terminal':
-                case 'site/index':
                     return $this->redirect('/terminal/login/');
 
                     break;
