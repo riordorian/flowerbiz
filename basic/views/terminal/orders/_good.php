@@ -6,7 +6,7 @@
 				<img class="product-image js-product-image" src="<?=$arGood['IMAGE']?>" >
 			</div>
 			<div class="product-desc">
-				<span class="product-price <?=empty($arGood['CAN_SELL']) ? 'product-price__danger' : ''?> js-product-price">
+				<span class="product-price <?=empty($arGood['CAN_SELL']) && $arGood['TYPE'] == 'BOUQUET' ? 'product-price__danger' : ''?> js-product-price">
 					<?=$arGood['RETAIL_PRICE']?> <i class="fa fa-rub"></i>
 				</span>
 				<small class="text-muted"><?=$arGood['catalogSection']['NAME']?></small>

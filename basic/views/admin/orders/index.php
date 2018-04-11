@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Заказы';
+$this->title = 'Продажи';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="clients-types-index">
