@@ -125,7 +125,7 @@ $this->context->bodyClass = '';
 
 				if( !empty($arReq['COMMENT']) ){
 				    ?><label for="#order-comment">Комментарий к заказу</label>
-					<textarea name="ORDERS[COMMENT]" id="#order-comment" class="form-control"><?=$arReq['COMMENT']?></textarea><?
+					<textarea name="ORDERS[COMMENT]" id="#order-comment" class="form-control m-t-sm"><?=$arReq['COMMENT']?></textarea><?
 				}
 
 				if( !empty($arReq['ORDER_ID']) ){

@@ -36,6 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Html::submitButton('Войти', ['class' => 'btn btn-primary block full-width', 'name' => 'login-button']) ?>
         </div>
     </div>
+	<div class="form-group">
+        <div class="col-lg-12">
+            <?= Html::a('Терминал флориста', '/terminal/login/', ['class' => 'btn btn-default block full-width']) ?>
+        </div>
+    </div>
 
 <!--    <a href="/reset-password/"><small>Забыли пароль?</small></a>-->
 <!--    <p class="text-muted text-center"><small>Еще не зарегистрированы?</small></p>-->
