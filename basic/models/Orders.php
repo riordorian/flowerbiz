@@ -217,17 +217,20 @@ class Orders extends \yii\db\ActiveRecord
                 'EVENT_ID' => $arAttrs['EVENT_ID'],
                 'GIFT_RECIPIENT_ID' => $arAttrs['GIFT_RECIPIENT_ID']
             ])->one();
-            
+
+			
             if( empty($arClientEvent) ){
                 try{
-                    $obCLientEvent = new ClientsEvents();
-                    $obCLientEvent->setAttributes([
+                    $obClientEvent = new ClientsEvents();
+					$obClientEvent->setAttributes([
                         'CLIENT_ID' => $arAttrs['CLIENT_ID'],
                         'EVENT_ID' => $arAttrs['EVENT_ID'],
                         'GIFT_RECIPIENT_ID' => $arAttrs['GIFT_RECIPIENT_ID'],
-                        'EVENT_DATE' => date('Y-m-d', strtotime($arAttrs['RECEIVING_DATE_START']))
+						'EVENT_DATE_DAY' =>   date('d', strtotime($arAttrs['RECEIVING_DATE_START'])),
+						'EVENT_DATE_MONTH', date('m', strtotime($arAttrs['RECEIVING_DATE_START']))
                     ]);
-                    $obCLientEvent->save();
+
+					$obClientEvent->save();
                 }
                 catch(\Exception $e){
                     Yii::trace($e->getMessage(), 'flower');
