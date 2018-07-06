@@ -347,7 +347,10 @@ class Orders extends \yii\db\ActiveRecord
                     $obGood->ID = $arOrderGood['GOOD_ID'];
                     $obGood->setOldAttributes($arGoods[$arOrderGood['GOOD_ID']]);
                     $obGood->setAttributes(
-                        array_merge($arGoods[$arOrderGood['GOOD_ID']], ['AMOUNT' => $arGoods[$arOrderGood['GOOD_ID']]['AMOUNT'] + $arOrderGood['AMOUNT']])
+                        array_merge(
+                        	$arGoods[$arOrderGood['GOOD_ID']],
+							['AMOUNT' => $arGoods[$arOrderGood['GOOD_ID']]['AMOUNT'] + $arOrderGood['AMOUNT']]
+						)
                     );
 
                     $obGood->save(false);
@@ -355,7 +358,9 @@ class Orders extends \yii\db\ActiveRecord
             }
 
             # Canceling order-bouquet
-            $obOrder->setAttribute('STATUS', 'CNC');
+            $obOrder->setAttributes([
+            	'STATUS' => $obOrder->TYPE == 'P' ? 'N' : 'CNC'
+			]);
             $obOrder->save();
         }
         catch(\Exception $e){
