@@ -26,20 +26,29 @@ use yii\widgets\ActiveForm;
 
         <?= $form->errorSummary($model, ['header' => '']); ?>
 
-        <div class="btn-group m-b-md" data-toggle="buttons"><?
-            echo $form
-                ->field($model, 'TYPE')
-                ->radioList($arTypes, [
-                    'item' => function ($index, $label, $name, $checked, $value) {
-                        return '<label class="btn btn-primary btn-outline ' . ($checked ? 'active' : '') . '" data-toggle="button">' . Html::radio($name, $checked,
-                            [
-                                'value' => $value,
-//                                'class' => 'js-reload-field',
-                            ]
-                        ) . '<i></i> ' . $label . '</label>';
-                    },
-                ])->label('');
-            ?></div>
+	    <div class="row">
+		    <div class="col-md-6">
+			    <div class="btn-group m-b-md" data-toggle="buttons"><?
+					echo $form
+						->field($model, 'TYPE')
+						->radioList($arTypes, [
+							'item' => function ($index, $label, $name, $checked, $value) {
+								return '<label class="btn btn-primary btn-outline ' . ($checked ? 'active' : '') . '" data-toggle="button">' . Html::radio($name, $checked,
+										[
+											'value' => $value,
+										]
+									) . '<i></i> ' . $label . '</label>';
+							},
+						])->label('');
+					?></div>
+		    </div>
+
+			<?= $form->field($model, 'ENCASHMENT', ['options' => ['class' => 'col-md-6 m-t-md']])->checkbox(['class' => 'js-widget switcher']) ?>
+
+
+
+	    </div>
+
 
         <div class="row">
             <?= $form->field($model, 'AMOUNT', ['options' => ['class' => 'col-md-6']])->textInput(['type' => 'number']) ?>

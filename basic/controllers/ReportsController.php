@@ -93,6 +93,7 @@ class ReportsController extends AdminController
 				'goodsConsumption' => $arProfit['GOODS_CONSUMPTION'],
 				'operationsConsumptionSum' => $arProfit['CONSUMPTION'],
 				'operationsIncomeSum' => $arProfit['INCOME'],
+				'operationsEncashmentsSum' => $arProfit['ENCASHMENT'],
 				'final' => $ordersSum - $arProfit['GOODS_CONSUMPTION'] + $arProfit['INCOME'] - $arProfit['CONSUMPTION']
 			]];
         }

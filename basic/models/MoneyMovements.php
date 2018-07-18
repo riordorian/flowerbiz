@@ -10,16 +10,21 @@ use yii\db\Transaction;
 /**
  * This is the model class for table "money_movements".
  *
- * @property integer $ID
- * @property string $NAME
- * @property integer $TYPE
- * @property integer $AMOUNT
- * @property integer $MONEY_ACCOUNT
- * @property integer $ORDER_ID
- * @property integer $CASHBOX_ID
- * @property integer $USER_ID
- * @property string $DATE
- * @property string $COMMENT
+ * @property int $ID ID
+ * @property string $NAME Название
+ * @property string $TYPE Тип
+ * @property int $AMOUNT Сумма
+ * @property int $MONEY_ACCOUNT Счет
+ * @property int $MONEY_ACCOUNT_FROM Со счета
+ * @property int $ORDER_ID ID заказа
+ * @property string $DATE Дата операции
+ * @property int $CASHBOX_ID Касса
+ * @property int $USER_ID Ответственный за операцию
+ * @property string $COMMENT Комментарий
+ * @property int $ENCASHMENT
+ *
+ * @property Cashboxes $cASHBOX
+ * @property User $uSER
  */
 class MoneyMovements extends Prototype
 {
@@ -52,7 +57,7 @@ class MoneyMovements extends Prototype
     {
         return [
             [['NAME', 'TYPE', 'AMOUNT', 'MONEY_ACCOUNT', 'DATE', 'USER_ID'], 'required'],
-            [['AMOUNT', 'MONEY_ACCOUNT', 'MONEY_ACCOUNT_FROM', 'ORDER_ID', 'USER_ID', 'CASHBOX_ID'], 'integer'],
+            [['AMOUNT', 'MONEY_ACCOUNT', 'MONEY_ACCOUNT_FROM', 'ORDER_ID', 'USER_ID', 'CASHBOX_ID', 'ENCASHMENT'], 'integer'],
             [['DATE'], 'safe'],
             [['COMMENT'], 'string'],
             [['NAME'], 'string', 'max' => 50],
@@ -77,6 +82,7 @@ class MoneyMovements extends Prototype
             'COMMENT' => 'Комментарий',
             'USER_ID' => 'Ответственный за операцию',
             'CASHBOX_ID' => 'Касса',
+			'ENCASHMENT' => 'Инкассация',
         ];
     }
 

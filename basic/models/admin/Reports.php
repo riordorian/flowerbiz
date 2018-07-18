@@ -140,19 +140,24 @@ class Reports extends Prototype
 		# Operations report
 		$arOperations = $obOperations->asArray()->all();
 		$arOperationsConsumptions = !empty($arOperations) ? array_filter($arOperations, function($arOperation){
-			return $arOperation['TYPE'] == 'CONSUMPTION';
+			return $arOperation['TYPE'] == 'CONSUMPTION' && $arOperation['ENCASHMENT'] != 1;
 		}) : [];
 		$arOperationsIncomes = !empty($arOperations) ? array_filter($arOperations, function($arOperation){
 			return $arOperation['TYPE'] == 'INCOME';
 		}) : [];
+		$arOperationEncashments = !empty($arOperations) ? array_filter($arOperations, function($arOperation){
+			return $arOperation['ENCASHMENT'] == 1;
+		}) : [];
 		$operationsConsumptionSum = !empty($arOperationsConsumptions) ? array_sum(array_column($arOperationsConsumptions, 'AMOUNT')) : 0;
 		$operationsIncomeSum = !empty($arOperationsIncomes) ? array_sum(array_column($arOperationsIncomes, 'AMOUNT')) : 0;
+		$operationsEncashmentsSum = !empty($arOperationEncashments) ? array_sum(array_column($arOperationEncashments, 'AMOUNT')) : 0;
 
 		$arResult = [
 			'ORDERS' => $arOrders,
 			'GOODS_CONSUMPTION' => $goodsСonsumption,
 			'OPERATIONS' => $arOperations,
 			'CONSUMPTION' => $operationsConsumptionSum,
+			'ENCASHMENT' => $operationsEncashmentsSum,
 			'INCOME' => $operationsIncomeSum
 		];
 

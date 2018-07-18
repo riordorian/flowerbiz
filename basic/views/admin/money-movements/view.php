@@ -40,6 +40,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $dataProvider->TYPE == 'INCOME' ? 'Доход' : 'Расход';
                 },
             ],
+			[
+				'attribute' => 'ENCASHMENT',
+				'value' => function ($dataProvider) {
+					return $dataProvider->ENCASHMENT == 1 ? 'Да' : 'Нет';
+				},
+			],
             [
                 'attribute' => 'AMOUNT',
                 'value' => function ($dataProvider) {

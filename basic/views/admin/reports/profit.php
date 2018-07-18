@@ -63,5 +63,13 @@ $this->params['breadcrumbs'][] = $this->title;?>
 				return number_format($dataProvider['final'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
 			},
 		],
+		[
+			'attribute' => 'operationsEncashmentsSum',
+			'label' => 'Инкассация',
+			'format' => 'html',
+			'value' => function($dataProvider){
+				return number_format($dataProvider['operationsEncashmentsSum'], 0, '.', ' ') . ' <i class="fa fa-rub"></i>';
+			},
+		],
 	]
 ]);
