@@ -20,9 +20,9 @@ class m180718_140920_mm_new_column extends Migration
      */
     public function safeDown()
     {
-        echo "m180718_140920_mm_new_column cannot be reverted.\n";
+//        echo "m180718_140920_mm_new_column cannot be reverted.\n";
 
-        return false;
+//        return false;
     }
 
     /*

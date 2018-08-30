@@ -25,9 +25,9 @@ class m180816_191147_smssettings extends Migration
      */
     public function safeDown()
     {
-        echo "m180816_191147_smssettings cannot be reverted.\n";
-
-        return false;
+//        echo "m180816_191147_smssettings cannot be reverted.\n";
+//
+//        return false;
     }
 
     /*
