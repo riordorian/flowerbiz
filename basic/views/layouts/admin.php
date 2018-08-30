@@ -90,6 +90,7 @@ AdminAsset::register($this);
                     <ul class="nav nav-second-level">
                         <li><a href="/admin/clients/">Клиенты</a></li>
                         <li><a href="/admin/clients-groups/">Группы клиентов</a></li>
+                        <li><a href="/admin/sms-settings/">Смс рассылка</a></li>
 <!--                        <li><a href="/admin/loyalty-programs/">Программы лояльности</a></li>-->
                     </ul>
                 </li>

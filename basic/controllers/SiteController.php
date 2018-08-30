@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Sms;
 use budyaga\users\models\forms\LoginForm;
 use Yii;
 use yii\filters\AccessControl;
@@ -152,4 +153,14 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionRest()
+	{
+		if( !empty($_REQUEST['action']) ){
+			$obRest = new Sms($_REQUEST['action']);
+			$obRest->runAction();
+		}
+
+		return false;
+	}
 }

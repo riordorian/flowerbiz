@@ -195,6 +195,8 @@ $config = [
 
                 '/admin/reports/<action:>' => 'reports/<action>',
 
+				'/admin/sms-settings/' => 'admin/sms-settings',
+
                 #VIRTUAL SECTIONS#
                 '/admin/clients-events/<action:>' => 'clients-events/<action>',
                 '/admin/loyalty-programs-steps/<action:>' => 'loyalty-programs-steps/<action>',
@@ -205,6 +207,15 @@ $config = [
                 '/terminal/orders-schedule/<action:>' => 'orders-schedule/<action>',
                 '/terminal/orders/' => 'orders/index/',
                 '/terminal/orders/<action:>' => 'orders/<action>',
+
+
+				# REST
+				[    'class' => 'yii\rest\UrlRule', 'controller' => 'rest/sms',
+					 'pluralize' => false,
+					 'extraPatterns' => [
+						 'POST send-events-info' => 'send-events-info', // это значит, что будем  принимать post
+					 ],
+				],
 
             ],
             'suffix' => '/',
