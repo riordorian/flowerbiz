@@ -23,7 +23,7 @@ class Sms
 		if( $arSmsSettings['ACTIVE'] == 1 && !empty($arSmsSettings['API_ID']) ){
 			$arEvents = ClientsEvents::find()
 				->where(['EVENT_DATE' => date('Y-m-d', strtotime('+1 day'))])
-				->select(['PHONE' => 'clients.PHONE', 'CLIENT_NAME' => 'clients.CLIENT_NAME', 'EVENT' => 'events.NAME',  'RECIPIENT' => 'gift_recipients.NAME'])
+				->select(['PHONE' => 'clients.PHONE', 'CLIENT_NAME' => 'clients.NAME', 'EVENT' => 'events.NAME',  'RECIPIENT' => 'gift_recipients.NAME'])
 				->leftJoin('clients', 'clients.ID=clients_events.CLIENT_ID')
 				->leftJoin('events', 'events.ID=clients_events.EVENT_ID')
 				->leftJoin('gift_recipients', 'gift_recipients.ID=clients_events.GIFT_RECIPIENT_ID')
