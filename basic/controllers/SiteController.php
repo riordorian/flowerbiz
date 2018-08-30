@@ -154,13 +154,5 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionRest()
-	{
-		if( !empty($_REQUEST['action']) ){
-			$obRest = new Sms($_REQUEST['action']);
-			$obRest->runAction();
-		}
 
-		return false;
-	}
 }

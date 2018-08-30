@@ -56,4 +56,26 @@ class AdminController extends PrototypeController
 			'obModel' => $obModel
 		]);
 	}
+
+
+	public function actionSms()
+	{
+
+		$arDomains = [
+			'floradesign.flowershop.pro',
+			'debora.flowershop.pro',
+			'kmp-kirov.flowershop.pro',
+			'kmp-pyatigosrsk.flowershop.pro',
+			'9106477400.flowershop.pro',
+			'oskol.flowershop.pro'
+		];
+
+		foreach($arDomains as $domain){
+			try{
+				exec('curl -X POST ' . $domain . '/rest/sms/send-events-info/');
+			} catch(\Exception $e){
+				Yii::trace($e->getMessage(), 'flower');
+			}
+		}
+	}
 }

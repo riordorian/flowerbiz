@@ -135,6 +135,7 @@ $config = [
                 '/confirmEmail' => '/user/user/confirm-email',
                 '/unbind/<id:[\w\-]+>' => '/user/auth/unbind',
                 '/oauth/<authclient:[\w\-]+>' => '/user/auth/index',
+                '/admin/sms' => 'admin/sms',
                 '<action:>' => 'site/<action>',
 
                 '/admin/' => 'user/user/login',

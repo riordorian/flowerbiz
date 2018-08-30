@@ -23,7 +23,7 @@ class Sms
 		if( $arSmsSettings['ACTIVE'] == 1 && !empty($arSmsSettings['API_ID']) ){
 			$arEvents = ClientsEvents::find()
 				->where(['EVENT_DATE' => date('Y-m-d', strtotime('+1 day'))])
-				->select(['PHONE' => 'clients.PHONE', 'EVENT' => 'events.NAME',  'RECIPIENT' => 'gift_recipients.NAME'])
+				->select(['PHONE' => 'clients.PHONE', 'CLIENT_NAME' => 'clients.CLIENT_NAME', 'EVENT' => 'events.NAME',  'RECIPIENT' => 'gift_recipients.NAME'])
 				->leftJoin('clients', 'clients.ID=clients_events.CLIENT_ID')
 				->leftJoin('events', 'events.ID=clients_events.EVENT_ID')
 				->leftJoin('gift_recipients', 'gift_recipients.ID=clients_events.GIFT_RECIPIENT_ID')
@@ -35,7 +35,7 @@ class Sms
 				$obData->multiple = [];
 				foreach($arEvents as $arEvent){
 					$obSms = new SMSRU($arSmsSettings['API_ID']);
-					$obData->multi[$arEvent['PHONE']] = 'Завтра у вас событие - ' . $arEvent['RECIPIENT'] . ' - ' . $arEvent['EVENT'] . '. Не забудьте купить букет';
+					$obData->multi[$arEvent['PHONE']] = 'Добрый день, ' . $arEvent['CLIENT_NAME'] . '! :) Напоминаем о предстоящих событиях: ' . $arEvent['RECIPIENT'] . ' - ' . $arEvent['EVENT'] . '. Дарим Вам 200 бонусов на покупку букета до' . date('d.m.Y');
 				}
 
 				$obSms->send_one($obData);
