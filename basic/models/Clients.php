@@ -209,6 +209,6 @@ class Clients extends Prototype
 			->all();
 
 		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
-		Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients)) . ')';
+		Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients) . ')');
 	}
 }

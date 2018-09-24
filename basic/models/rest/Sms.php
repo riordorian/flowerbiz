@@ -30,7 +30,7 @@ class Sms
 				->asArray()
 				->all();
 
-			if( !empty($arEvents) ){
+			/*if( !empty($arEvents) ){
 				$obData = new \stdClass();
 				$obData->multiple = [];
 				foreach($arEvents as $arEvent){
@@ -39,7 +39,7 @@ class Sms
 				}
 
 				$obSms->send_one($obData);
-			}
+			}*/
 		}
 	}
 }
