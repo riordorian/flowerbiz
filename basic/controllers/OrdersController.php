@@ -222,14 +222,25 @@ class OrdersController extends PrototypeController
     {
         $arReq = \Yii::$app->request->getBodyParams();
         $this->layout = 'empty';
+        $arMoneyAccounts = MoneyAccounts::getList(['filter' => ['USE_ON_CASHBOX' => 1], 'select' => ['ID', 'TYPE', 'NAME']]);
+		foreach($arMoneyAccounts as &$arMoneyAccount) {
+			if( $arMoneyAccount['TYPE'] == 'BONUS' && !empty($arReq['SALE_BONUS_LIMIT']) ){
+				$arMoneyAccount['VALUE'] = $arReq['SALE_BONUS_LIMIT'];
+			}
+			else{
+				$arMoneyAccount['VALUE'] = 0;
+			}
+        }
+        unset($arMoneyAccount);
 
         return $this->render('/terminal/sale.php', [
-            'arMoneyAccounts' => MoneyAccounts::getFilterValues(['USE_ON_CASHBOX' => 1]),
+            'arMoneyAccounts' => $arMoneyAccounts,
             'arOperators' => !empty($arReq['OPERATORS']) ? $arReq['OPERATORS'] : [],
             'arGoods' => empty($arReq['CatalogProducts']) ? [] : $arReq['CatalogProducts'],
             'total' => empty($arReq['TOTAL']) ? 0 : $arReq['TOTAL'],
             'discount' => empty($arReq['DISCOUNT']) ? 0 : $arReq['DISCOUNT'],
-            'bonus' => empty($arReq['BONUS']) ? 0 : $arReq['BONUS'],
+            'saleBonusLimit' => empty($arReq['SALE_BONUS_LIMIT']) ? 0 : $arReq['SALE_BONUS_LIMIT'],
+            'newBonus' => empty($arReq['SALE_BONUS']) ? 0 : $arReq['SALE_BONUS'],
             'prepayment' => empty($arReq['PREPAYMENT']) ? 0 : $arReq['PREPAYMENT'],
             'clientId' => empty($arReq['CLIENT_ID']) ? 0 : $arReq['CLIENT_ID'],
             'orderId' => empty($arReq['ORDER_ID']) ? '' : $arReq['ORDER_ID'],
@@ -504,6 +515,23 @@ class OrdersController extends PrototypeController
                             return;
                         }
                     }
+
+                    /* Save clients bonuses */
+                    $obClients = new Clients();
+					if( $obClients->load($arReq) && !empty($obOrders->CLIENT_ID) ){
+						$obClient = Clients::findOne($obOrders->CLIENT_ID);
+
+						$arBonusAccount = MoneyAccounts::getList(['filter' => ['TYPE' => 'BONUS'], 'select' => ['ID']]);
+						$arBonusAccount = reset($arBonusAccount);
+
+						if( !empty($arTransactions[$arBonusAccount['ID']]) ){
+							$obClient->updateCounters(['BONUS' => -intval($arTransactions[$arBonusAccount['ID']])]);
+						}
+
+						if( !empty($obClients->BONUS) ){
+							$obClient->updateCounters(['BONUS' => intval($obClients->BONUS)]);
+						}
+					}
 
                     # Add change operation
                     if( array_sum($arTransactions) > $total ){

@@ -53,7 +53,7 @@ class ClientsSearch extends Clients
         ]);
 
         // Add sorting by user group
-        $query
+        /*$query
             ->joinWith('clientsClientsGroups')
             ->joinWith('clientsClientsGroups.clientsGroups')
             ->joinWith('clientsClientsTypes')
@@ -66,7 +66,7 @@ class ClientsSearch extends Clients
         $dataProvider->sort->attributes['CLIENT_TYPE'] = [
             'asc' => ['clients_types.NAME' => SORT_ASC],
             'desc' => ['clients_types.NAME' => SORT_DESC],
-        ];
+        ];*/
 
         $this->load($params);
 
@@ -90,6 +90,11 @@ class ClientsSearch extends Clients
             ->andFilterWhere(['like', 'EMAIL', $this->EMAIL])
             ->andFilterWhere(['like', 'DESCRIPTION', $this->DESCRIPTION]);*/
 
+            $dataProvider->pagination = [
+				'forcePageParam' => false,
+				'pageSizeParam' => false,
+				'pageSize' => 15
+			];
         return $dataProvider;
     }
 }

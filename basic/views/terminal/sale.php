@@ -30,6 +30,8 @@
 	<?= $form->field($obOrders, 'CLIENT_ID', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $clientId])->label(false); ?>
 	<?= $form->field($obOrders, 'ID', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $orderId])->label(false); ?>
 	<?= $form->field($obOrders, 'TOTAL', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $total])->label(false); ?>
+	<?= $form->field($obClients, 'BONUS', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $newBonus])->label(false); ?>
+	<?= $form->field($obClients, 'SALE_BONUS_LIMIT', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $saleBonusLimit])->label(false); ?>
 	<?= $form->field($obOrders, 'DISCOUNT', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $sum - $total])->label(false); ?>
 	<?= $form->field($obOrders, 'STEP', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => 'F'])->label(false); ?>
 	<?= $form->field($obOrders, 'OPERATOR_WORK', ['template' => '{input}', 'inputTemplate' => '{input}', 'options' => ['tag' => false]])->hiddenInput(['value' => $bOperatorWork])->label(false); ?>
@@ -60,24 +62,11 @@
 			}
 		?></h1><?
 
-		foreach($arMoneyAccounts as $id => $accountName){
-			echo $form->field($obMoneyAccounts, 'BALANCE[' . $id . ']')
-				->textInput(['type' => 'number', 'class' => 'js-client-id-field', 'class' => 'form-control input-lg js-cash-field', 'placeholder' => $accountName])
-				->label($accountName);
+		foreach($arMoneyAccounts as $arAccount){
+			echo $form->field($obMoneyAccounts, 'BALANCE[' . $arAccount['ID'] . ']')
+				->textInput(['type' => 'number', 'class' => 'js-client-id-field', 'class' => 'form-control input-lg js-cash-field', 'placeholder' => $arAccount['NAME'], 'VALUE' => $arAccount['VALUE'], 'max' => $arAccount['VALUE']])
+				->label($arAccount['NAME']);
 		}
-
-		/*if( !empty($bonus) ){
-			*/?><!--<div class="form-group m-t-lg row">
-				<label class="col-md-3 col-sm-2 col-xs-2 control-label text-left">Бонус</label>
-
-				<div class="col-md-8 col-sm-4 col-xs-10 pull-right">
-					<div class="input-group m-b">
-						<input type="number" max="" placeholder="Баллами" class="form-control input-lg">
-						<span class="input-group-addon"><i class="fa fa-rub"></i></span>
-					</div>
-				</div>
-			</div>--><?/*
-		}*/
 
 		?><!--<div class="form-group m-t-lg row">
 			<label class="col-md-4 col-sm-2 col-xs-2 control-label text-left">Закрыть без оплаты</label>

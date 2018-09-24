@@ -29,6 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'ID',
             'NAME',
             'PERCENT',
+
         ],
     ]) ?>
 

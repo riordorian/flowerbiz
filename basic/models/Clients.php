@@ -13,6 +13,7 @@ use Yii;
  * @property string $GENDER
  * @property string $BIRTHDAY
  * @property string $PHONE
+ * @property string $BONUS
  * @property string $EMAIL
  * @property string $DESCRIPTION
  *
@@ -40,6 +41,7 @@ class Clients extends Prototype
         return [
             [['NAME', 'PHONE'], 'required', 'message' => 'Поле обязательно для заполнения.'],
             [['BIRTHDAY'], 'safe'],
+            [['BONUS'], 'integer'],
             [['BIRTHDAY_MONTH', 'BIRTHDAY_DAY', 'BIRTHDAY_YEAR'], 'string'],
             [['DESCRIPTION'], 'string'],
             [['NAME'], 'string', 'max' => 100],
@@ -66,6 +68,7 @@ class Clients extends Prototype
             'EMAIL' => 'Email',
             'DESCRIPTION' => 'Описание',
             'CLIENT_GROUP' => 'Группа',
+            'BONUS' => 'Бонусов доступно',
         ];
     }
 
@@ -190,4 +193,22 @@ class Clients extends Prototype
         
         return $arDiscounts;
     }
+
+
+	/**
+	 * Add Events bonuses
+	 *
+	 * @param $bonus
+	 */
+	public function addEventsBonuses($bonus)
+	{
+		$arEvents = ClientsEvents::find()
+			->where(['EVENT_DATE' => date('Y-m-d', strtotime('+1 day'))])
+			->select(['CLIENT_ID'])
+			->asArray()
+			->all();
+
+		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
+		Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients)) . ')';
+	}
 }

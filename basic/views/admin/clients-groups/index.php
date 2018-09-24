@@ -27,15 +27,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 'NAME',
                 'PERCENT',
+				[
+					'attribute' => 'LOYALTY_PROGRAM',
+					'value' => 'loyaltyPrograms.NAME',
+				],
 
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'contentOptions' => ['class' => 'text-right column column_actions']
                 ],
-               /* [
-                    'attribute' => 'LOYALTY_PROGRAM',
-                    'value' => 'loyaltyPrograms.NAME',
-                ],*/
             ],
             'tableOptions' => [
                 'class' => 'table table-striped'

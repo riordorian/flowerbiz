@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'PERCENT')->textInput() ?>
     
-<!--    --><?//= $form->field($model, 'LOYALTY_PROGRAM_ID')->dropDownList($arLoyalties, ['prompt' => 'Выберите программу лояльности', 'class' => 'js-widget chosen']); ?>
+    <?= $form->field($model, 'LOYALTY_PROGRAM_ID')->dropDownList($arLoyalties, ['prompt' => 'Выберите программу лояльности', 'class' => 'js-widget chosen']); ?>
 
     <div class="form-group">
         <?= Html::submitButton('<i class="fa fa-check"></i>&nbsp;Сохранить', ['class' => 'btn btn-primary js-btn_cloning']) ?>

@@ -43,6 +43,9 @@ Pjax::begin(); ?>    <?= GridView::widget([
                         case 'BANK_ACCOUNT':
                             $type = 'Банковский счет';
                             break;
+                        case 'BONUS':
+                            $type = 'Бонусы';
+                            break;
                     }
 
                     return $type;
@@ -68,14 +71,14 @@ Pjax::begin(); ?>    <?= GridView::widget([
                 'buttons'=>[
                     'update'=>function ($url, $model) {
                         $customurl = Yii::$app->getUrlManager()->createUrl(['admin/money-accounts/update','id' => $model['ID']]);
-                        if( $model['TYPE'] != 'CASH' ){
+                        if( !in_array($model['TYPE'], ['CASH', 'BONUS']) ){
                             return \yii\helpers\Html::a( '<span class="glyphicon glyphicon-pencil"></span>', $customurl,
                                 ['title' => Yii::t('yii', 'Edit'), 'data-pjax' => '0']);
                         }
                     },
                     'delete'=>function ($url, $model) {
                         $customurl = Yii::$app->getUrlManager()->createUrl(['admin/money-accounts/delete','id' => $model['ID']]);
-                        if( $model['TYPE'] != 'CASH' ){
+						if( !in_array($model['TYPE'], ['CASH', 'BONUS']) ){
                             return \yii\helpers\Html::a( '<span class="glyphicon glyphicon-trash"></span>', $customurl,
                                 ['title' => Yii::t('yii', 'Delete'), 'data-pjax' => '0']);
                         }

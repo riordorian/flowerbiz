@@ -26,19 +26,19 @@ use yii\widgets\ActiveForm;
             ]
         )->textInput(['class' => 'form-control js-reload-field']) ?>
 
-        <?= $form->field($model, 'CLIENT_TYPE', [
+        <?/*= $form->field($model, 'CLIENT_TYPE', [
                 'options' => [
                     'class' => 'col-md-3 js-reload-field'
                 ]
             ]
-        )->dropDownList(ClientsTypes::getFilterValues(), ['prompt' => 'Любой', 'class' => 'js-widget chosen']) ?>
+        )->dropDownList(ClientsTypes::getFilterValues(), ['prompt' => 'Любой', 'class' => 'js-widget chosen']) */?><!--
 
-        <?= $form->field($model, 'CLIENT_GROUP', [
+        --><?/*= $form->field($model, 'CLIENT_GROUP', [
                 'options' => [
                     'class' => 'col-md-3 js-reload-field'
                 ]
             ]
-        )->dropDownList(ClientsGroups::getFilterValues(), ['prompt' => 'Любая', 'class' => 'js-widget chosen']) ?>
+        )->dropDownList(ClientsGroups::getFilterValues(), ['prompt' => 'Любая', 'class' => 'js-widget chosen']) */?>
         <div class="form-group col-md-2">
             <label class="control-label">&nbsp;</label><br>
             <?= Html::a('Сбросить', ['index'], ['class' => 'btn btn-default']) ?>

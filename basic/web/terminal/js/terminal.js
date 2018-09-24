@@ -1,15 +1,19 @@
 'use strict';
 
-var terminal = new function(){
+var terminal = new function() {
     var orderSum;
 
-    this.init = function()
-    {
+    this.init = function () {
         terminal.blocks.init();
     }
 
-    this.calcSum = function(discount, bonus, maxDiscount, clientBonus)
-    {
+    /*
+    * discount - % of discount
+    * bonus - group % bonus
+    * maxDiscount - max discount %
+    * clientBonus - client bonuses
+    * */
+    this.calcSum = function (discount, bonus, maxDiscount, clientBonus) {
         // order sum
         orderSum = 0;
         var $sumField = $('.js-sum');
@@ -17,17 +21,22 @@ var terminal = new function(){
         var $sumText = $('.js-sum').prev().find('span');
         var $cartInfoText = $('.js-cart-mobile-info');
         var $bonusField = $('.js-bonus');
-        var $discountField = $('.js-discount');
         var $clientBonusField = $('.js-client-bonus');
+        var $clientBonusText = $('.js-client-bonus').prev().find('span');
+        var $clientBonusLimitField = $('.js-bonus-limit');
+        var $saleBonusLimitField = $('.js-sale-bonus-limit');
+        var $saleBonusField = $('.js-sale-bonus');
+        var $clientBonusLimitText = $('.js-bonus-limit').prev().find('span');
+        var $discountField = $('.js-discount');
         var $finalSumField = $('.js-final-sum');
         var operatorPercent = parseInt($('.js-operator-percent').val());
 
-        $('.js-cart-good input[type=text]:visible').each(function(){
+        $('.js-cart-good input[type=text]:visible').each(function () {
             orderSum += parseInt($(this).val()) * parseInt($(this).closest('.js-cart-good').data('price'));
         });
 
         // Operators work
-        if( operatorPercent > 0 && !$('.js-cart-bouquet:visible').length && $workPaymentField.is(':checked') ){
+        if (operatorPercent > 0 && !$('.js-cart-bouquet:visible').length && $workPaymentField.is(':checked')) {
             orderSum += orderSum * operatorPercent / 100
         }
 
@@ -36,20 +45,27 @@ var terminal = new function(){
         $cartInfoText.text(crm.ui.numberFormat(orderSum, 0, '.', ' '));
 
         var discountVal = parseInt(parseInt($sumField.val()) * parseInt(discount) / 100);
-        if( isNaN(discountVal) ){
+        if (isNaN(discountVal)) {
             discountVal = 0;
         }
-        
+
         var total = orderSum - discountVal;
-        var bonusVal = parseInt(clientBonus);
+        maxDiscount = parseInt(maxDiscount);
+        clientBonus = parseInt(clientBonus);
         var maxBonusVal = parseInt(total * maxDiscount / 100);
+        maxBonusVal = maxBonusVal > clientBonus ? clientBonus : maxBonusVal;
+        var bonusForOrder = parseInt(bonus / 100 * total);
 
-        bonusVal = bonusVal > maxBonusVal ? maxBonusVal : bonusVal;
+        $bonusField.val(bonus).prev().find('span').text(crm.ui.numberFormat(bonusForOrder, 0, '.', ' '));
+        $saleBonusField.val(bonusForOrder)
+        $clientBonusField.val(clientBonus);
+        $clientBonusText.text(crm.ui.numberFormat(clientBonus, 0, '.', ' '));
 
-        $bonusField.val(bonusVal).prev().find('span').text(crm.ui.numberFormat(bonusVal, 0, '.', ' '));
-        $clientBonusField.val(bonusVal);
+        $clientBonusLimitField.val(maxDiscount);
+        $saleBonusLimitField.val(maxBonusVal);
+        $clientBonusLimitText.text(crm.ui.numberFormat(maxBonusVal, 0, '.', ' '));
 
-        $discountField.val(discount > 0 ? discount: 0);
+        $discountField.val(discount > 0 ? discount : 0);
         if (discountVal > 0) {
             $discountField
                 .prev()
@@ -64,8 +80,6 @@ var terminal = new function(){
 
         $finalSumField.val(total).prev().find('span').text(crm.ui.numberFormat(total, 0, '.', ' '));
     }
-
-
 }
 
 /*
@@ -179,7 +193,8 @@ terminal.blocks.findUser = function(query, process)
             }],
             success: function (response) {
                 var discount = response.hasOwnProperty('DISCOUNT') ? response.DISCOUNT : 0;
-                var bonus = response.hasOwnProperty('BONUS') ? response.BONUS : 0;
+                var bonus = response.hasOwnProperty('BONUS') ? response['BONUS'] : 0;
+                var clientBonus = response.hasOwnProperty('CLIENT_BONUS') ? response['CLIENT_BONUS'] : 0;
                 var maxDiscount = response.hasOwnProperty('MAX_DISCOUNT') ? response['MAX_DISCOUNT'] : 0;
                 $('.js-sale-link').removeClass('disabled');
 
@@ -187,7 +202,7 @@ terminal.blocks.findUser = function(query, process)
                     discount,
                     bonus,
                     maxDiscount,
-                    1000
+                    clientBonus
                 );
 
                 if( bUpdateInput ){
@@ -352,7 +367,7 @@ terminal.blocks.addGood2Cart = function()
                     // Updating order info
                     // TODO: Переделать метод обновления ифнормации по заказу, т.к. он был перенесен и унифицирован
                     console.log($('.js-discount').val());
-                    terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), 1000);
+                    terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), $('.js-client-bonus').val());
                     // $sum.text(crm.ui.numberFormat(orderSum, 0, '.', ' '));
                     // $('.js-sum').val(orderSum);
                 }
@@ -427,8 +442,8 @@ terminal.blocks.addBouquet2Cart = function()
         }).appendTo($('.js-terminal__cart-goods'));
 
         $('.js-terminal__cart-goods').removeClass('hidden');
-        
-        terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), 1000);
+
+        terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), $('.js-client-bonus').val());
     });
 }
 terminal.blocks.addBouquet2Cart.exists = function()
@@ -451,7 +466,7 @@ terminal.blocks.removeFromCart = function(){
         else if( !$('.js-cart-good:visible').length ){
             $('.js-bouquet').addClass('hidden')
         }
-        terminal.calcSum(parseInt($('.js-discount').val()), parseInt($('.js-bonus').val()), parseInt($('.js-bonus-limit').val()), 1000);
+        terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), $('.js-client-bonus').val());
 
         if( $('.js-order').length ){
             $('.js-order').remove();
@@ -469,7 +484,7 @@ terminal.blocks.removeFromCart.exists = function(){
 terminal.blocks.recalcSum = function()
 {
     $(document).on('change', '[name=WORK_PAYMENT]', function () {
-        terminal.calcSum(parseInt($('.js-discount').val()), parseInt($('.js-bonus').val()), parseInt($('.js-bonus-limit').val()), 1000);
+        terminal.calcSum($('.js-discount').val(), $('.js-bonus').val(), $('.js-bonus-limit').val(), $('.js-client-bonus').val());
         $('.js-operator-work-field').val($(this).is(':checked') ? 1 : 0);
     })
 }

@@ -28,7 +28,7 @@ $this->context->fixHeading = 'true';
                     echo $form->field($model, 'MAX_PERCENT')->textInput();
                 }
 
-                echo $form->field($model, 'WELCOME_BONUS')->textInput();
+//                echo $form->field($model, 'WELCOME_BONUS')->textInput();
 
             ActiveForm::end();
 

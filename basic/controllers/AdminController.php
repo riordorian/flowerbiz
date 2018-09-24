@@ -63,6 +63,7 @@ class AdminController extends PrototypeController
 
 		$arDomains = [
 			'floradesign.flowershop.pro',
+
 			'debora.flowershop.pro',
 			'kmp-kirov.flowershop.pro',
 			'kmp-pyatigosrsk.flowershop.pro',

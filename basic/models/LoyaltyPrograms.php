@@ -30,7 +30,7 @@ class LoyaltyPrograms extends Prototype
     public function rules()
     {
         return [
-            [['NAME', 'MAX_PERCENT', 'WELCOME_BONUS'], 'required'],
+            [['NAME', 'MAX_PERCENT'], 'required'],
             [['MAX_PERCENT', 'WELCOME_BONUS'], 'integer'],
             [['NAME'], 'string', 'max' => 50],
             [['ID'], 'exist'],

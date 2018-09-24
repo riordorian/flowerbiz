@@ -32,6 +32,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'BIRTHDAY',
             'PHONE',
             'EMAIL:email',
+			[
+				'attribute' => 'CLIENT_GROUP',
+				'value' => $model->clientsClientsGroups->GroupName,
+			],
+			'BONUS',
             'DESCRIPTION:ntext',
         ],
     ]) ?>

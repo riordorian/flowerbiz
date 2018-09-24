@@ -35,12 +35,13 @@ $this->context->bodyClass = 'animated_fill-none';
                     'attribute' => 'CLIENT_GROUP',
                     'value' => 'clientsClientsGroups.GroupName',
                 ],
+				'BONUS',
                 [
                     'class' => 'yii\grid\ActionColumn',
                     'contentOptions' => ['class' => 'text-right column column_actions']
                 ],
             ],
-            'tableOptions' => [
+           'tableOptions' => [
                 'class' => 'table table-striped'
             ],
         ]);

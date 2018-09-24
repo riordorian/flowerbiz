@@ -46,8 +46,9 @@ class ClientsController extends AdminController
     {
         $searchModel = new ClientsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->pageSize = 15;
-        $this->listCount = $dataProvider->getCount();
+//        $dataProvider->pagination->pageSize = 15;
+//        $this->listCount = $dataProvider->getCount();
+        $this->listCount = $dataProvider->getTotalCount();
 
         return $this->render($this->viewPath . 'index', [
             'searchModel' => $searchModel,

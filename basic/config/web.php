@@ -135,12 +135,13 @@ $config = [
                 '/confirmEmail' => '/user/user/confirm-email',
                 '/unbind/<id:[\w\-]+>' => '/user/auth/unbind',
                 '/oauth/<authclient:[\w\-]+>' => '/user/auth/index',
-                '/admin/sms' => 'admin/sms',
+                '/migrations/<action:>' => 'migrations/<action>',
                 '<action:>' => 'site/<action>',
 
                 '/admin/' => 'user/user/login',
                 '/admin/clients/' => 'clients/index',
                 '/admin/clients/<action:>' => 'clients/<action>',
+				'/admin/sms' => 'admin/sms',
 
                 '/admin/clients-groups/' => 'clients-groups/index/',
                 '/admin/clients-groups/<action:>' => 'clients-groups/<action>',
