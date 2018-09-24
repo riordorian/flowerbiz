@@ -14,12 +14,12 @@ class MigrationsController extends PrototypeController
 {
 	public function action1()
 	{
-		/*foreach(Yii::$app->params->arDomains as $domain){
+		foreach(Yii::$app->params->arDomains as $domain){
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $domain . '/migrations/1/');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$output = curl_exec($ch);
-		}*/
+		}
 
 		$arAcc = MoneyAccounts::findOne(['TYPE' => 'BONUS']);
 		if( empty($arAcc->ID) ){
