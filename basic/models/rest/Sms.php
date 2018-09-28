@@ -35,7 +35,7 @@ class Sms
 				$obData->multiple = [];
 				foreach($arEvents as $arEvent){
 					$obSms = new SMSRU($arSmsSettings['API_ID']);
-					$obData->multi[$arEvent['PHONE']] = 'Добрый день, ' . $arEvent['CLIENT_NAME'] . '! :) Завтра у Вас знаменательное событие, начисляем 200 б. до ' . date('d.m.Y', strtotime('+1 week')) . '. Баланс - ' . $arEvents['BONUS'] . '. Ждем Вас за подарком.';
+					$obData->multi[$arEvent['PHONE']] = 'Добрый день, ' . $arEvent['CLIENT_NAME'] . '! :) Завтра у Вас знаменательное событие, начисляем 200 б. до ' . date('d.m.Y', strtotime('+1 week')) . '. Ждем Вас за подарком.';
 				}
 
 				$obSms->send_one($obData);
