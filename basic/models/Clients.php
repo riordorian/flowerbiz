@@ -211,4 +211,22 @@ class Clients extends Prototype
 		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
 		Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients) . ')');
 	}
+
+
+	/**
+	 * Remove bonuses
+	 *
+	 * @param $bonus
+	 */
+	public function removeEventsBonuses($bonus)
+	{
+		$arEvents = ClientsEvents::find()
+			->where(['EVENT_DATE' => date('Y-m-d', strtotime('-1 week'))])
+			->select(['CLIENT_ID'])
+			->asArray()
+			->all();
+
+		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
+		Clients::updateAllCounters(['BONUS' => -$bonus], 'ID IN (' . implode(',', $arClients) . ')');
+	}
 }

@@ -13,6 +13,7 @@ class SmsController extends ActiveController
 		$obModel = new Sms();
 		try{
 			Clients::addEventsBonuses(200);
+			Clients::removeEventsBonuses(200);
 			$obModel->sendEverydaySms();
 		}
 		catch(\Exception $e){
