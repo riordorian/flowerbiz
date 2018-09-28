@@ -208,8 +208,12 @@ class Clients extends Prototype
 			->asArray()
 			->all();
 
-		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
-		Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients) . ')');
+		if( !empty($arEvents) ){
+			$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
+			if( !empty($arClients) ){
+				Clients::updateAllCounters(['BONUS' => $bonus], 'ID IN (' . implode(',', $arClients) . ')');
+			}
+		}
 	}
 
 
@@ -226,7 +230,11 @@ class Clients extends Prototype
 			->asArray()
 			->all();
 
-		$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
-		Clients::updateAllCounters(['BONUS' => (-1 * intval($bonus))], 'ID IN (' . implode(',', $arClients) . ')');
+		if( !empty($arEvents) ){
+			$arClients = array_unique(array_column($arEvents, 'CLIENT_ID'));
+			if( !empty($arClients) ){
+				Clients::updateAllCounters(['BONUS' => (-1 * intval($bonus))], 'ID IN (' . implode(',', $arClients) . ')');
+			}
+		}
 	}
 }
