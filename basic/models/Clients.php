@@ -221,7 +221,7 @@ class Clients extends Prototype
 	public function removeEventsBonuses($bonus)
 	{
 		$arEvents = ClientsEvents::find()
-			->where(['EVENT_DATE' => date('Y-m-d', strtotime('-1 week'))])
+			->where(['EVENT_DATE' => date('Y-m-d', strtotime('-7 days'))])
 			->select(['CLIENT_ID'])
 			->asArray()
 			->all();
