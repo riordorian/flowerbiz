@@ -33,7 +33,7 @@ $this->context->fixHeading = 'true';
             ActiveForm::end();
 
 
-            ?><label>Условия перехода</label><?
+            /**/?><!--<label>Условия перехода</label>--><?/*
 
             # show loyalty steps forms
             if( !empty($arModelSteps[$model->ID]) && is_array($arModelSteps[$model->ID]) ){
@@ -52,26 +52,26 @@ $this->context->fixHeading = 'true';
                     'modelStep' => $modelSteps,
                     'arGroups' => $arGroups[$model->ID],
                 ]);
-            }
+            }*/
 
 
-            ?><div class="m-b-md">
+          /*  */?><!--<div class="m-b-md">
                 <a href="javascript:;" class="link text-info js-link_clone" data-cloned=".js-form_cloned">Добавить</a>
-            </div><?
+            </div>--><?
 
 
-            if( $modelsCnt > 1 ){
-                ?><div class="m-lg"><br></div><?
+           /* if( $modelsCnt > 1 ){
+                */?><!--<div class="m-lg"><br></div><?/*
             }
 
-            ?><div class="hidden js-form_cloned"><?
+            */?><div class="hidden js-form_cloned"><?/*
                 $modelSteps->ID = false;
                 echo $this->render('_form_steps.php', [
                     'modelStep' => $modelSteps,
                     'modelSteps' => $modelSteps,
                     'arGroups' => $arGroups[$model->ID]
                 ]);
-            ?></div><?
+            */?></div>--><?
     }
 
 
