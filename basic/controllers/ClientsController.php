@@ -159,6 +159,7 @@ class ClientsController extends AdminController
         if( $model->load(Yii::$app->request->post()) ) {
             $model->save();
 
+            return $this->refresh();
 //            return $this->redirect(['view', 'id' => $model->ID]);
         }
         else{
