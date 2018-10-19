@@ -19,7 +19,7 @@ class ReportsController extends AdminController
     /**
      * @var string - base viewPath
      */
-    protected $viewPath = '/admin/reports/';
+    public $viewPath = '/admin/reports/';
 
     /**
      * @inheritdoc
