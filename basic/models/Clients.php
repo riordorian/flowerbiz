@@ -113,21 +113,35 @@ class Clients extends Prototype
     public function afterSave($insert, $changedAttributes)
     {
         parent::afterSave($insert, $changedAttributes);
-        $obCCTypes = new ClientsClientsTypes();
-        $obCCTypes->load(Yii::$app->request->post());
+		$obCCTypes = new ClientsClientsTypes();
+		$obCCTypes->load(Yii::$app->request->post());
+		$clientId = $this->ID;
+
 
         $obCCGroups = new ClientsClientsGroups();
         $obCCGroups->load(Yii::$app->request->post());
 
         $obCCGroups->CLIENT_ID = $obCCTypes->CLIENT_ID = $this->ID;
 
-        if( !empty($obCCGroups->CLIENT_ID) && !empty($obCCGroups->CLIENT_GROUP_ID) ){
-            $arExistedCGroup = ClientsClientsGroups::find()->where(['CLIENT_ID' => $obCCGroups->CLIENT_ID, 'CLIENT_GROUP_ID' => $obCCGroups->CLIENT_GROUP_ID])->limit(1)->asArray()->one();
-            if( !empty($arExistedCGroup['ID']) ){
-                $obCCGroups->setAttribute('ID', $arExistedCGroup['ID']);
-                $obCCGroups->isNewRecord = false;
-            }
-        }
+		if( !empty($obCCGroups->CLIENT_ID) ){
+			$obExistedCGroup = ClientsClientsGroups::find()
+				->andFilterWhere(['CLIENT_ID' => $clientId])
+				->one();
+
+			if( !empty($obExistedCGroup->ID) ){
+				$obCCGroups->setAttribute('ID', $obExistedCGroup->ID);
+				$obCCGroups->isNewRecord = false;
+			}
+
+			$obExistedCCType = ClientsClientsTypes::find()
+				->andFilterWhere(['CLIENT_ID' => $clientId])
+				->one();
+
+			if( !empty($obExistedCCType->ID) ){
+				$obCCTypes->setAttribute('ID', $obExistedCCType->ID);
+				$obCCTypes->isNewRecord = false;
+			}
+		}
 
         try{
             $obCCTypes->save(false);
