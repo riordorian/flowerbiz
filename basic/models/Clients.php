@@ -128,18 +128,18 @@ class Clients extends Prototype
 				->andFilterWhere(['CLIENT_ID' => $clientId])
 				->one();
 
-			if( !empty($obExistedCGroup->ID) ){
-				$obCCGroups->setAttribute('ID', $obExistedCGroup->ID);
-				$obCCGroups->isNewRecord = false;
+			if( !empty($obExistedCGroup->ID) && !empty($obCCGroups->CLIENT_GROUP_ID) ){
+				$obExistedCGroup->setAttribute('CLIENT_GROUP_ID', $obCCGroups->CLIENT_GROUP_ID);
+				$obCCGroups = $obExistedCGroup;
 			}
 
 			$obExistedCCType = ClientsClientsTypes::find()
 				->andFilterWhere(['CLIENT_ID' => $clientId])
 				->one();
 
-			if( !empty($obExistedCCType->ID) ){
-				$obCCTypes->setAttribute('ID', $obExistedCCType->ID);
-				$obCCTypes->isNewRecord = false;
+			if( !empty($obExistedCCType->ID) && !empty($obCCTypes->CLIENT_TYPE_ID) ){
+				$obExistedCCType->setAttribute('CLIENT_TYPE_ID', $obCCTypes->CLIENT_TYPE_ID);
+				$obCCTypes = $obExistedCCType;
 			}
 		}
 
