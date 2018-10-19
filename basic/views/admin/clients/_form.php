@@ -69,7 +69,6 @@ $this->context->fixHeading = 'true';
                     <?= $form->field($model, 'EMAIL')->textInput(['maxlength' => true])->input('email'); ?>
 
                     <?= $form->field($modelCCGroups, 'CLIENT_GROUP_ID')->dropDownList($arCGroups, ['prompt' => 'Выберите группу', 'class' => 'js-widget chosen']); ?>
-                    <?= $form->field($modelCCGroups, 'CLIENT_ID')->hiddenInput()->label(false); ?>
 
                     <?= $form->field($model, 'DESCRIPTION')->textarea(['rows' => 6]) ?>
 

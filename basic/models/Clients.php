@@ -121,6 +121,14 @@ class Clients extends Prototype
 
         $obCCGroups->CLIENT_ID = $obCCTypes->CLIENT_ID = $this->ID;
 
+        if( !empty($obCCGroups->CLIENT_ID) && !empty($obCCGroups->CLIENT_GROUP_ID) ){
+            $arExistedCGroup = ClientsClientsGroups::find()->where(['CLIENT_ID' => $obCCGroups->CLIENT_ID, 'CLIENT_GROUP_ID' => $obCCGroups->CLIENT_GROUP_ID])->limit(1)->asArray()->one();
+            if( !empty($arExistedCGroup['ID']) ){
+                $obCCGroups->setAttribute('ID', $arExistedCGroup['ID']);
+                $obCCGroups->isNewRecord = false;
+            }
+        }
+
         try{
             $obCCTypes->save(false);
             $obCCGroups->save(false);

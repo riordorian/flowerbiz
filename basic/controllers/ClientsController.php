@@ -133,7 +133,6 @@ class ClientsController extends AdminController
         $modelCCTypes = $arRelated['clientsClientsTypes'];
 
         $modelCCGroups = empty($arRelated['clientsClientsGroups']) ? new ClientsClientsGroups() : $arRelated['clientsClientsGroups'];
-        $modelCCGroups->setAttribute('CLIENT_ID', $id);
 
         $modelCEvents = new ClientsEvents();
         $arModelCEvents = $arRelated['clientsEvents'];
