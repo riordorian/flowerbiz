@@ -22,7 +22,7 @@ class AdminOrdersController extends AdminController
     /**
      * @var string
      */
-    protected $viewPath = '/admin/orders/';
+    public $viewPath = '/admin/orders/';
     
 
     /**
